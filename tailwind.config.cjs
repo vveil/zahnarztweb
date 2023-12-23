@@ -3,7 +3,7 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      normal: ['"Source Sans Pro"', "sans-serif"],
+      sans: ['"Source Sans Pro"', "sans-serif"],
       special: ['"Source Serif 4"', "serif"],
     },
     extend: {
