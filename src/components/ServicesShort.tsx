@@ -12,7 +12,7 @@ function ServicesList(props: any) {
     // });
 
     const [services] = createResource(async () => {
-        const response = await fetch('/data/services.json');
+        const response = await fetch('http://localhost:3000/data/services.json');
         return await response.json() as Service[];
     }
     );
@@ -23,6 +23,8 @@ function ServicesList(props: any) {
             <ul>
                 {/* <For each={services()}> */}
                 {/* {(service) => ( */}
+                {services.loading && <p>Loading...</p>}
+                {services.error && <p>Error loading data.</p>}
                 {services() && services()!.map((service) => (
                     <A href={`/${service.url}`}>
                         <li class='mt-2 pb-2 border-b-2'>
