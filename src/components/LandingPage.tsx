@@ -7,8 +7,8 @@ import TeamImage from "./TeamImage";
 
 export default function LandingPage(props: any) {
     return (
-        <div class={`${props.className} flex flex-col gap-4`}>
-            <div class={`hidden sm:flex flex-col lg:flex-row justify-between pb-4 h-auto w-auto`}>
+        <div class={`${props.className} hidden sm:flex flex-col gap-4`}>
+            <div class={`sm:flex flex-col lg:flex-row justify-between pb-4 h-auto w-auto`}>
                 <div class="flex flex-col gap-4 md:gap-8 ">
                     <HeroText />
                     <div class="text-xl">
@@ -25,8 +25,7 @@ export default function LandingPage(props: any) {
                     <ApplicationTeaser />
                 </div>
             </div>
-            <ServicesShort className="mx-8" />
-
+            <ServicesShort className="" />
         </div>
     )
 }
