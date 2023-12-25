@@ -1,5 +1,6 @@
 import { createResource, For } from 'solid-js';
 import { A } from 'solid-start';
+// import { createAsync, cache } from "@solidjs/router";
 
 // type Student = { name: string; house: string; }
 type Service = { title: string; url: string; description: string; }
@@ -23,8 +24,6 @@ function ServicesList(props: any) {
             <ul>
                 {/* <For each={services()}> */}
                 {/* {(service) => ( */}
-                {services.loading && <p>Loading...</p>}
-                {services.error && <p>Error loading data.</p>}
                 {services() && services()!.map((service) => (
                     <A href={`/${service.url}`}>
                         <li class='mt-2 pb-2 border-b-2'>
