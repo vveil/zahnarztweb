@@ -1,4 +1,4 @@
-import { A } from "solid-start";
+import { A } from "@solidjs/router";
 
 export default function ApplicationForm(props: any) {
     return (

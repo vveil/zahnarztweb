@@ -1,4 +1,4 @@
-import { A } from "solid-start";
+import { A } from "@solidjs/router";
 import ApplicationForm from "~/components/ApplicationForm";
 import ApplicationInfos from "~/components/ApplicationInfos";
 import BaseLayout from "~/layouts/BaseLayout";

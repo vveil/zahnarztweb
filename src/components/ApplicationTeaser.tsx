@@ -1,4 +1,4 @@
-import { A } from "solid-start";
+import { A } from "@solidjs/router";
 import ApplicationButton from "./ApplicationButton";
 
 export default function ApplicationTeaser(props: any) {

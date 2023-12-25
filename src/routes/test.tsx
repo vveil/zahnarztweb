@@ -1,4 +1,4 @@
-import { A } from "solid-start";
+import { A } from "@solidjs/router";
 import ApplicationTeaser from "~/components/ApplicationTeaser";
 import Contact from "~/components/Contact";
 import Counter from "~/components/Counter";
