@@ -4,13 +4,16 @@ import { createAsync, cache } from "@solidjs/router";
 
 type Service = { title: string; url: string; description: string; }
 
-function ServicesList(props: any) {
+const getServices = cache(async () => {
+    const response = await fetch('http://localhost:3000/data/services.json');
+    console.log("loading services")
+    return await response.json() as Service[];
+}, "services");
 
-    const [services] = createResource(async () => {
-        const response = await fetch('http://localhost:3000/data/services.json');
-        return await response.json() as Service[];
-    }
-    );
+export const route = { load: () => getServices() };
+
+function ServicesList(props: any) {
+    const services = createAsync(getServices);
 
     return (
         <div class={`${props.className}`}>
