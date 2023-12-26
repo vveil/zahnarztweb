@@ -3,9 +3,11 @@ import BaseLayout from "~/layouts/BaseLayout";
 
 export default function Service() {
   return (
-    <main class="">
+    <main>
       <BaseLayout className="">
-        <ServicesShort />
+        <div class="mx-8 lg:mx-32">
+          <ServicesShort className="" />
+        </div>
       </BaseLayout>
     </main>
   );
