@@ -8,3 +8,9 @@
         background-color: #EBF3F6;
     }
 }
+
+@layer components {
+    .default-width {
+        @apply mx-8 lg:mx-32;
+    }
+}

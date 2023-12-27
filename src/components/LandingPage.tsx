@@ -1,7 +1,7 @@
 import ApplicationTeaser from "./ApplicationTeaser";
 import Contact from "./Contact";
 import HeroText from "./HeroText";
-import OpeningHours from "./OpeningHours";
+import OpeningHoursWidget from "./OpeningHoursWidget";
 import ServicesShort from "./ServicesShort";
 import TeamImage from "./TeamImage";
 
@@ -16,7 +16,7 @@ export default function LandingPage(props: any) {
                         <p>38126 Braunschweig</p>
                     </div>
                     <div class="flex flex-col gap-4 sm:flex-row lg:flex-col">
-                        <OpeningHours />
+                        <OpeningHoursWidget />
                         <Contact />
                     </div>
                 </div>

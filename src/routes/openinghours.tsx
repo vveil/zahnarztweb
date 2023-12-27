@@ -1,3 +1,4 @@
+import OpeningHoursWidget from "~/components/OpeningHoursWidget";
 import ServicesShort from "~/components/ServicesShort";
 import BaseLayout from "~/layouts/BaseLayout";
 
@@ -6,7 +7,7 @@ export default function Service() {
     <main>
       <BaseLayout className="">
         <div class="default-width">
-          <ServicesShort className="" />
+          <OpeningHoursWidget className="" />
         </div>
       </BaseLayout>
     </main>

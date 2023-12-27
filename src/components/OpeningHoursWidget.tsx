@@ -1,4 +1,4 @@
-export default function OpeningHours(props: any) {
+export default function OpeningHoursWidget(props: any) {
     return (
         <div class={`${props.className} p-4 bg-dark-teal flex flex-col gap-6 w-screen sm:w-fit pr-16 md:pr-32 rounded`}>
             <h2 class="text-xl font-bold font-special">Öffnungszeiten</h2>
