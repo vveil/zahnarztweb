@@ -7,7 +7,7 @@ import TeamImage from "./TeamImage";
 
 export default function LandingPage(props: any) {
     return (
-        <div class={`${props.className} hidden sm:flex flex-col gap-4`}>
+        <div class={`${props.className} hidden sm:flex flex-col items-center gap-4`}>
             <div class={`sm:flex flex-col lg:flex-row justify-between pb-4 h-auto w-auto`}>
                 <div class="flex flex-col gap-4 md:gap-8 ">
                     <HeroText />
