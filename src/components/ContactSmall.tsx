@@ -1,4 +1,4 @@
-export default function Contact(props: any) {
+export default function ContactSmall(props: any) {
     return (
         <div class={`${props.className} flex flex-col gap-4`}>
             <h2 class="text-2xl font-bold font-special">Kontakt</h2>

@@ -1,5 +1,4 @@
 import { A } from "@solidjs/router";
-import { createSignal } from "solid-js";
 
 export default function Footer(props: any) {
     return (

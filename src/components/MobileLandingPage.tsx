@@ -1,5 +1,5 @@
 import ApplicationTeaser from "./ApplicationTeaser";
-import Contact from "./Contact";
+import ContactSmall from "./ContactSmall";
 import HeroText from "./HeroText";
 import OpeningHoursWidget from "./OpeningHoursWidget";
 import ServicesShort from "./ServicesShort";
@@ -20,7 +20,7 @@ export default function MobileLandingPage(props: any) {
                 <div class="flex flex-col gap-4 mt-8 w-auto lg:w-6/12 lg:mt-0">
                     <TeamImage />
                     <ApplicationTeaser className="mx-8" />
-                    <Contact className="mx-8" />
+                    <ContactSmall className="mx-8" />
                 </div>
             </div>
             <ServicesShort className="mx-8" />

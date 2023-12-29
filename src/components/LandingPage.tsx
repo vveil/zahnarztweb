@@ -1,5 +1,5 @@
 import ApplicationTeaser from "./ApplicationTeaser";
-import Contact from "./Contact";
+import ContactSmall from "./ContactSmall";
 import HeroText from "./HeroText";
 import OpeningHoursWidget from "./OpeningHoursWidget";
 import ServicesShort from "./ServicesShort";
@@ -17,7 +17,7 @@ export default function LandingPage(props: any) {
                     </div>
                     <div class="flex flex-col gap-4 sm:flex-row lg:flex-col">
                         <OpeningHoursWidget />
-                        <Contact />
+                        <ContactSmall />
                     </div>
                 </div>
                 <div class="flex flex-col gap-4 mt-8 w-auto lg:w-6/12 lg:mt-0">
