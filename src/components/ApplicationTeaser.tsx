@@ -7,7 +7,7 @@ export default function ApplicationTeaser(props: any) {
             <p>Du hast Interesse an einer <span class="font-semibold">Ausbildung</span> zur <br />
                 <span class="font-semibold">Zahnmedizinischen Fachangestellen</span>?
             </p>
-            <ApplicationButton text="Hier bewerben" />
+            <ApplicationButton text="Hier bewerben" className="hover:bg-highlight-light" />
         </div>
     )
 }

@@ -12,7 +12,7 @@ module.exports = {
         "light-teal": "#EBF3F6",
         "dark-teal": "#CDD9DE",
         highlight: "#3B7C95",
-        "highlight-light": "#50AACD",
+        "highlight-light": "#669CB2",
       },
     },
   },
