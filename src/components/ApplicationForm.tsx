@@ -6,6 +6,8 @@ export default function ApplicationForm(props: any) {
     const [name, setName] = createSignal("");
     const [surname, setSurname] = createSignal("");
     const [email, setEmail] = createSignal("");
+    const [cv, setCv] = createSignal("");
+    const [transcript, setTranscript] = createSignal("");
 
     const handleSubmit = (event: Event): void => {
         event.preventDefault();
@@ -14,6 +16,8 @@ export default function ApplicationForm(props: any) {
             name: name(),
             surname: surname(),
             email: email(),
+            cv: cv(),
+            transcript: transcript(),
         };
 
         // should be sending data via POST request...
@@ -37,6 +41,26 @@ export default function ApplicationForm(props: any) {
                             opt => <option value={opt}>{opt}</option>
                         }</For>
                     </select>
+                </div>
+                <div class="flex gap-4">
+                    <div class="form-control flex flex-col gap-2">
+                        <label for="cv">Lebenslauf</label>
+                        <input class="p-1"
+                            type="file"
+                            id="cv"
+                            value={cv()}
+                            onChange={(e) => setCv(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div class="form-control flex flex-col gap-2">
+                        <label for="transcript">Zeugnis</label>
+                        <input class="p-1"
+                            type="file"
+                            id="transcript"
+                            value={transcript()}
+                            onChange={(e) => setTranscript(e.currentTarget.value)}
+                        />
+                    </div>
                 </div>
                 <div class="flex gap-4">
                     <div class="form-control flex flex-col gap-2 flex-1">
