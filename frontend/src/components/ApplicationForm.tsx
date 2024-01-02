@@ -11,17 +11,23 @@ export default function ApplicationForm(props: any) {
 
     const handleSubmit = (event: Event): void => {
         event.preventDefault();
-        const dataToSubmit = {
-            stelle: selected(),
-            name: name(),
-            surname: surname(),
-            email: email(),
-            cv: cv(),
-            transcript: transcript(),
-        };
+        // const data = new FormData();
+        const dataToSubmit = new FormData();
+        dataToSubmit.append('stelle', selected());
+        dataToSubmit.append('name', name());
+        dataToSubmit.append('surname', surname());
+        dataToSubmit.append('email', email());
+        dataToSubmit.append('cv', cv());
+        dataToSubmit.append('transcript', transcript());
 
         // should be sending data via POST request...
-        console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
+        // console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
+        fetch('http://localhost:3001/api/application', {
+            method: 'POST',
+            body: dataToSubmit,
+            mode: 'cors', // Make sure to include this
+            credentials: 'include',
+        })
     };
 
     const options = {
@@ -48,7 +54,7 @@ export default function ApplicationForm(props: any) {
                         <input class="p-1"
                             type="file"
                             id="cv"
-                            value={cv()}
+                            value={'test'}
                             onChange={(e) => setCv(e.currentTarget.value)}
                         />
                     </div>
@@ -57,7 +63,7 @@ export default function ApplicationForm(props: any) {
                         <input class="p-1"
                             type="file"
                             id="transcript"
-                            value={transcript()}
+                            value={'trans'}
                             onChange={(e) => setTranscript(e.currentTarget.value)}
                         />
                     </div>
