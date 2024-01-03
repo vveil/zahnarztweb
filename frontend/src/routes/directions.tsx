@@ -1,4 +1,6 @@
 import { A } from "@solidjs/router";
+import Address from "~/components/ApplicationTeaser copy";
+import GoogleLocation from "~/components/GoogleLocation";
 import LandingPage from "~/components/LandingPage";
 import MobileLandingPage from "~/components/MobileLandingPage";
 import BaseLayout from "~/layouts/BaseLayout";
@@ -7,7 +9,10 @@ export default function Directions() {
   return (
     <main class="">
       <BaseLayout className="">
-        <p>Rautheim</p>
+        <div class="default-width flex flex-col gap-4">
+          <Address />
+          <GoogleLocation />
+        </div>
       </BaseLayout >
     </main >
   );
