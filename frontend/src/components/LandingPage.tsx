@@ -1,5 +1,6 @@
 import ApplicationTeaser from "./ApplicationTeaser";
 import ContactSmall from "./ContactSmall";
+import GoogleLocation from "./GoogleLocation";
 import HeroText from "./HeroText";
 import OpeningHoursWidget from "./OpeningHoursWidget";
 import ServicesShort from "./ServicesShort";
@@ -14,6 +15,7 @@ export default function LandingPage(props: any) {
                     <div class="text-xl">
                         <p>Weststr. 70</p>
                         <p>38126 Braunschweig</p>
+                        <GoogleLocation className="mt-2 text-md border-2 bg-white text-gray-500 text-sm" svgClass="text-gray-500" />
                     </div>
                     <div class="flex flex-col gap-4 sm:flex-row lg:flex-col">
                         <OpeningHoursWidget />

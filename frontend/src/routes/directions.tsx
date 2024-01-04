@@ -11,7 +11,7 @@ export default function Directions() {
       <BaseLayout className="">
         <div class="default-width flex flex-col gap-4">
           <Address />
-          <GoogleLocation />
+          <GoogleLocation className="bg-highlight text-light-teal" svgClass="text-light-teal" />
         </div>
       </BaseLayout >
     </main >
