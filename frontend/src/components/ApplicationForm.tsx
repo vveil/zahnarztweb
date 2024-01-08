@@ -1,15 +1,16 @@
 import { Component, For, createEffect, createSignal } from "solid-js";
 import { A } from "@solidjs/router";
+import axios from "axios";
 
 export default function ApplicationForm(props: any) {
     const [selected, setSelected] = createSignal("AZUBI ZMFA");
     const [name, setName] = createSignal("");
     const [surname, setSurname] = createSignal("");
     const [email, setEmail] = createSignal("");
-    const [cv, setCv] = createSignal("");
-    const [transcript, setTranscript] = createSignal("");
+    const [cv, setCv] = createSignal<File | null>(null);
+    const [transcript, setTranscript] = createSignal<File | null>(null);
 
-    const handleSubmit = (event: Event): void => {
+    const handleSubmit = async (event: Event) => {
         event.preventDefault();
         // const data = new FormData();
         const dataToSubmit = new FormData();
@@ -17,17 +18,30 @@ export default function ApplicationForm(props: any) {
         dataToSubmit.append('name', name());
         dataToSubmit.append('surname', surname());
         dataToSubmit.append('email', email());
-        dataToSubmit.append('cv', cv());
-        dataToSubmit.append('transcript', transcript());
+
+        if (cv()) {
+            dataToSubmit.append('cv', cv() as Blob);
+        }
+        if (transcript()) {
+            dataToSubmit.append('transcript', transcript() as Blob);
+        }
 
         // should be sending data via POST request...
         // console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
-        fetch('http://localhost:3001/api/application', {
-            method: 'POST',
-            body: dataToSubmit,
-            mode: 'cors', // Make sure to include this
-            credentials: 'include',
-        })
+        try {
+            // Make a POST request to the backend
+            const response = await axios.post("http://localhost:3001/api/application", dataToSubmit);
+
+            // Log the server response
+            console.log(response.data);
+        } catch (error) {
+            console.error("Error uploading files:", error);
+        }
+    };
+
+    const handleFileChange = (event: Event, setFile: (file: File | null) => void) => {
+        const selectedFile = (event.target as HTMLInputElement).files?.[0];
+        setFile(selectedFile || null);
     };
 
     const options = {
@@ -54,8 +68,7 @@ export default function ApplicationForm(props: any) {
                         <input class="p-1"
                             type="file"
                             id="cv"
-                            value={'test'}
-                            onChange={(e) => setCv(e.currentTarget.value)}
+                            onChange={(e) => handleFileChange(e, setCv)}
                         />
                     </div>
                     <div class="form-control flex flex-col gap-2">
@@ -63,8 +76,7 @@ export default function ApplicationForm(props: any) {
                         <input class="p-1"
                             type="file"
                             id="transcript"
-                            value={'trans'}
-                            onChange={(e) => setTranscript(e.currentTarget.value)}
+                            onChange={(e) => handleFileChange(e, setTranscript)}
                         />
                     </div>
                 </div>
