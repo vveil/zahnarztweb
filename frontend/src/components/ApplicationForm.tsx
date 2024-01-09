@@ -12,6 +12,7 @@ export default function ApplicationForm(props: any) {
 
     const handleSubmit = async (event: Event) => {
         event.preventDefault();
+        console.log("inside handleSubmit");
         // const data = new FormData();
         const dataToSubmit = new FormData();
         dataToSubmit.append('stelle', selected());
@@ -30,8 +31,9 @@ export default function ApplicationForm(props: any) {
         // console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
         try {
             // Make a POST request to the backend
+            console.log("before post");
             const response = await axios.post("http://localhost:3001/api/application", dataToSubmit);
-
+            console.log("after post");
             // Log the server response
             console.log(response.data);
         } catch (error) {
