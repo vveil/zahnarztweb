@@ -18,7 +18,7 @@ export default function LandingPage(props: any) {
                         <GoogleLocation className="mt-2 text-md border-2 bg-white text-gray-500 text-sm" svgClass="text-gray-500" />
                     </div>
                     <div class="flex flex-col gap-4 sm:flex-row lg:flex-col">
-                        <OpeningHoursWidget />
+                        <OpeningHoursWidget hasInlineHeading={true} />
                         <ContactSmall />
                     </div>
                 </div>

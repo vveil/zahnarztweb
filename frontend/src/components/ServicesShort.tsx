@@ -1,5 +1,6 @@
 import { createSignal, For } from 'solid-js';
 import { A } from "@solidjs/router";
+import SiteHeading from './SiteHeading';
 
 const [services] = createSignal(
     [{
@@ -48,7 +49,7 @@ function ServicesList(props: any) {
 
     return (
         <div class={`${props.className} flex flex-col`}>
-            <h2 class='text-3xl font-special'>Unser Behandlungsspektrum</h2>
+            <SiteHeading text='Unser Behandlungsspektrum' />
             <ul>
                 <For each={services()}>{(service, i) =>
                     <A href={`/${service.url}`}>

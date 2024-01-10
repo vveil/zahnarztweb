@@ -12,6 +12,7 @@ export default function ApplicationForm(props: any) {
 
     const handleSubmit = async (event: Event) => {
         event.preventDefault();
+        
         console.log("inside handleSubmit");
         // const data = new FormData();
         const dataToSubmit = new FormData();

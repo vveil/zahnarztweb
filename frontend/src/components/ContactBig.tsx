@@ -3,7 +3,6 @@ import Address from "./ApplicationTeaser copy";
 export default function ContactBig(props: any) {
     return (
         <div class={`${props.className} flex flex-col gap-4`}>
-            <h1 class="text-4xl">Kontakt</h1>
             <div class="flex">
                 <Address />
                 <div class="flex flex-col gap-4">
