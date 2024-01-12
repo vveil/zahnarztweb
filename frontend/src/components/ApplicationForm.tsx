@@ -1,6 +1,7 @@
 import { Component, For, createEffect, createSignal } from "solid-js";
 import { A } from "@solidjs/router";
 import axios from "axios";
+import Contact from "~/routes/contact";
 
 export default function ApplicationForm(props: any) {
     const [selected, setSelected] = createSignal("AZUBI ZMFA");
@@ -12,9 +13,8 @@ export default function ApplicationForm(props: any) {
 
     const handleSubmit = async (event: Event) => {
         event.preventDefault();
-        
+
         console.log("inside handleSubmit");
-        // const data = new FormData();
         const dataToSubmit = new FormData();
         dataToSubmit.append('stelle', selected());
         dataToSubmit.append('name', name());
@@ -28,15 +28,9 @@ export default function ApplicationForm(props: any) {
             dataToSubmit.append('transcript', transcript() as Blob);
         }
 
-        // should be sending data via POST request...
-        // console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
         try {
             // Make a POST request to the backend
-            console.log("before post");
             const response = await axios.post("http://localhost:3001/api/application", dataToSubmit);
-            console.log("after post");
-            // Log the server response
-            console.log(response.data);
         } catch (error) {
             console.error("Error uploading files:", error);
         }
@@ -56,7 +50,6 @@ export default function ApplicationForm(props: any) {
     return (
         <div class={`${props.className}`}>
             <form onSubmit={handleSubmit} class="flex flex-col gap-4">
-                {/* TODO dropdown für Art der Stelle (siehe Obsidian) */}
                 <div class="form-control flex flex-col gap-2 flex-1">
                     <label for="art">Art der Stelle</label>
                     <select class="p-1" id="art" value={selected()} onInput={e => setSelected(e.currentTarget.value)}>
