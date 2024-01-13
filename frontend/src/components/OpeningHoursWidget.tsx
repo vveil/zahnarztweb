@@ -16,19 +16,19 @@ export default function OpeningHoursWidget(props: any) {
                 </div>
                 <div class="flex flex-col gap-2 font-thin">
                     <div class="flex gap-4">
-                        <p>8&thinsp;–&thinsp;12</p>
-                        <p>14&thinsp;–&thinsp;18</p>
+                        <p>8&thinsp;–&hairsp;12</p>
+                        <p>14&thinsp;–&hairsp;18</p>
                     </div>
                     <div class="flex gap-4">
-                        <p>8&thinsp;–&thinsp;12</p>
-                        <p>15&thinsp;–&thinsp;19</p>
+                        <p>8&thinsp;–&hairsp;12</p>
+                        <p>15&thinsp;–&hairsp;19</p>
                     </div>
-                    <p>8&thinsp;–&thinsp;12</p>
+                    <p>8&thinsp;–&hairsp;12</p>
                     <div class="flex gap-4">
-                        <p>8&thinsp;–&thinsp;12</p>
-                        <p>15&thinsp;–&thinsp;19</p>
+                        <p>8&thinsp;–&hairsp;12</p>
+                        <p>15&thinsp;–&hairsp;19</p>
                     </div>
-                    <p>8&thinsp;–&thinsp;12</p>
+                    <p>8&thinsp;–&hairsp;12</p>
                 </div>
             </div>
         </div>
