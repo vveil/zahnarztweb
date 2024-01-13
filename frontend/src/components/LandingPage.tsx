@@ -27,7 +27,7 @@ export default function LandingPage(props: any) {
                     <ApplicationTeaser />
                 </div>
             </div>
-            <ServicesShort className="" />
+            {/* <ServicesShort className="" /> */}
         </div>
     )
 }

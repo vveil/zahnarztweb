@@ -23,7 +23,7 @@ export default function MobileLandingPage(props: any) {
                     <ContactSmall className="mx-8" />
                 </div>
             </div>
-            <ServicesShort className="mx-8" />
+            {/* <ServicesShort className="mx-8" /> */}
         </div>
     )
 }
