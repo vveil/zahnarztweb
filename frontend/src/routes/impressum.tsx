@@ -10,7 +10,7 @@ export default function Impressum() {
       <BaseLayout className="">
         <div class="flex flex-col gap-4 default-width">
 
-          <SiteHeading text='Impressum' className="mb-2" />
+          <SiteHeading text='Impressum' className="-mb-2" />
 
           <div>
             Angaben gemäß § 5 TMG <br />
