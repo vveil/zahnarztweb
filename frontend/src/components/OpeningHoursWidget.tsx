@@ -14,7 +14,7 @@ export default function OpeningHoursWidget(props: any) {
                     <p>Donnerstag</p>
                     <p>Freitag</p>
                 </div>
-                <div class="flex flex-col gap-2 font-thin">
+                <div class="flex flex-col gap-2 font-normal">
                     <div class="flex gap-4">
                         <p>8&thinsp;–&hairsp;12</p>
                         <p>14&thinsp;–&hairsp;18</p>
