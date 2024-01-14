@@ -14,14 +14,15 @@ export default function App() {
         <>
           <Suspense>
             {/* <Nav /> */}
-            <div class="flex flex-col justify-between min-h-screen">
-              <div>
-                <Header className="mx-4 md:mx-16 md:mb-12" />
+            <div class="flex justify-center flex-1 w-screen">
+              <div class="flex flex-col justify-between max-w-[1300px] w-full mx-28 min-h-screen">
+                <div class="w-full">
+                  <Header className="" />
 
-                {props.children}
-
+                  {props.children}
+                </div>
+                <Footer className="mt-8 pb-8" />
               </div>
-              <Footer className="mt-8 pb-8" />
             </div>
           </Suspense>
         </>
