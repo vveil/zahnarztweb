@@ -30,7 +30,7 @@ jobs:
       - uses: docker/build-push-action@v5.1.0
         name: Build and push Docker image to GH packages
         with:
-          content: ./
+          context: ./frontend
           file: ./frontend/Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.frontend:${{ github.sha }}
@@ -38,7 +38,7 @@ jobs:
       - uses: docker/build-push-action@v5.1.0
         name: Build and push Docker image to GH packages
         with:
-          content: ./
+          context: ./backend
           file: ./backend/Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:${{ github.sha }}
