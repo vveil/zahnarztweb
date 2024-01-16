@@ -43,14 +43,10 @@ jobs:
           push: true
           tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:latest
 
-      # Insert steps for build here if needed
-      # - name: Build
-      #   run: build_command
-
-      # - name: Deploy to VPS
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.VPS_HOST }}
-      #     username: ${{ secrets.VPS_USERNAME }}
-      #     key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
-      #     script: ./deployToZahn.sh
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+          script: ./deployToZahn.sh

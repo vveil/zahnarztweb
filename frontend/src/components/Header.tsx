@@ -25,7 +25,6 @@ export default function Header(props: any) {
                 <A class={`${active("/directions")} `} href="/directions">Anfahrt</A>
                 <A class={`${active("/service")} `} href="/service">Behandlungsspektrum</A>
                 <A class={`${active("/aktuelles")} `} href="/aktuelles">Aktuelles</A>
-                <A class={`${active("/team")} `} href="/team">Team</A>
                 <ApplicationButton text="Bewerben" className={`${active("/bewerben")} "hover:bg-highlight-light"`} />
             </div>
             <div class="flex lg:hidden font-special">
