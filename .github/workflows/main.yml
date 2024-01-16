@@ -5,21 +5,52 @@ on:
     branches:
       - master
 
+env:
+  REGISTRY: ghcr.io
+  ORG_NAME: vveil
+  IMAGE_BASENAME: zahnarztweb
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - uses: docker/login-action@v3.0.0
+        name: Login to GH packages
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v5.1.0
+        name: Build and push Docker image to GH packages
+        with:
+          content: ./
+          file: ./frontend/Dockerfile
+          push: true
+          tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.frontend:${{ github.sha }}
+
+      - uses: docker/build-push-action@v5.1.0
+        name: Build and push Docker image to GH packages
+        with:
+          content: ./
+          file: ./backend/Dockerfile
+          push: true
+          tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:${{ github.sha }}
 
       # Insert steps for build here if needed
       # - name: Build
       #   run: build_command
 
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
-          script: ./deployToZahn.sh
+      # - name: Deploy to VPS
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.VPS_HOST }}
+      #     username: ${{ secrets.VPS_USERNAME }}
+      #     key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+      #     script: ./deployToZahn.sh
