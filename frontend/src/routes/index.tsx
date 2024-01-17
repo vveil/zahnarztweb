@@ -7,8 +7,7 @@ export default function Home() {
   return (
     <main class="">
       <BaseLayout className="">
-        <MobileLandingPage className="" />
-        <LandingPage className="sm:mx-8 lg:mx-32" />
+        <LandingPage className="" />
       </BaseLayout>
     </main>
   );
