@@ -18,7 +18,6 @@ export default function App() {
               <div class="flex flex-col justify-between max-w-[1300px] w-full mx-28 min-h-screen">
                 <div class="w-full">
                   <Header className="pt-20 pb-28" />
-
                   {props.children}
                 </div>
                 <Footer className="mt-8 pb-8" />
