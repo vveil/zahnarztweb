@@ -18,7 +18,7 @@ export default function Header(props: any) {
     <div class={`${props.className} flex justify-between`}>
       <A href="/" class="flex flex-col">
         <h1 class="text-start font-semibold text-xl md:text-2xl text-dark-blue">Zahnarztpraxis</h1>
-        <h1 class="text-start font-semibold text-xl md:text-2xl opacity-40">Dr. med. dent. Jürgen Werner</h1>
+        <h1 class="text-start font-semibold text-xl md:text-2xl opacity-40">Dr. med. dent. Jürgen&nbsp;Werner</h1>
       </A>
       <div class="hidden lg:flex gap-8 text-lg items-center">
         <A class={`${active("/aktuelles")} `} href="/aktuelles">Aktuelles</A>
