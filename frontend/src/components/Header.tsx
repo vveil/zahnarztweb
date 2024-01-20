@@ -16,7 +16,7 @@ export default function Header(props: any) {
       : "hover:text-highlight-light";
   }
   return (
-    <div class={`${props.className} flex justify-between`}>
+    <div class={`${props.className} flex justify-between mx-5 sm:mx-0`}>
       <A href="/" class="flex flex-col">
         <h1 class="text-start font-semibold text-xl md:text-2xl text-dark-blue">Zahnarztpraxis</h1>
         <h1 class="text-start font-semibold text-xl md:text-2xl opacity-40">Dr. med. dent. Jürgen&nbsp;Werner</h1>
@@ -27,7 +27,7 @@ export default function Header(props: any) {
         <A class={`${active("/dokumente")} `} href="/dokumente">Dokumente</A>
         <PrimaryButton url="/bewerben" className={`${active("/bewerben")}`}><span>Bewerben</span></PrimaryButton>
       </div>
-      <div class="flex lg:hidden">
+      <div class="flex sm:hidden">
         Mobile Menu
       </div>
     </div>

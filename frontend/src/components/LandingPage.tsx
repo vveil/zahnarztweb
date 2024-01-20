@@ -6,10 +6,10 @@ import PrimaryButton from "./PrimaryButton";
 
 export default function LandingPage(props: any) {
     return (
-        <div class={`${props.className} flex flex-col gap-24`}>
+        <div class={`${props.className} flex flex-col gap-12 sm:gap-24`}>
             <HeroText />
-            <div class="flex gap-8">
-                <BaseWidget title="Anfahrt" className="flex-1">
+            <div class="flex flex-col sm:flex-row gap-8">
+                <BaseWidget title="Anfahrt" className="flex-1" bgColor="sm:bg-dark-teal">
                     <div class="flex flex-col gap-6">
                         <div>
                             <p>Weststraße 70,</p>
@@ -51,7 +51,7 @@ export default function LandingPage(props: any) {
                         </div>
                     </div>
                 </BaseWidget>
-                <BaseWidget title="Kontakt" className="flex-1">
+                <BaseWidget title="Kontakt" className="flex-1" bgColor="sm:bg-dark-teal">
                     <div class="flex flex-col gap-1 mb-6">
                         <p class="font-semibold">Telefon</p>
                         <p>0531&thinsp;/&thinsp;6802931</p>
@@ -65,10 +65,14 @@ export default function LandingPage(props: any) {
                 </BaseWidget>
             </div>
             <div>
-                <h1 class="text-4xl font-bold mb-3">Das Team der Praxis</h1>
-                <p class="text-2xl">Wir beraten und behandeln Sie gerne persönlich<br />und individuell auf Ihre Situation angepasst.</p>
+                <h1 class="mx-5 sm:mx-0 text-4xl font-bold mb-3">Das Team der Praxis</h1>
+                <p class="mx-5 sm:mx-0 text-2xl">
+                    Wir beraten und behandeln Sie gerne persönlich und
+                    <span class="sm:block hidden"> </span>
+                    individuell auf Ihre Situation angepasst.
+                </p>
             </div>
-            <div class="flex justify-between">
+            <div class="flex flex-col gap-10 sm:flex-row sm:gap-0 justify-between">
                 <EmployeePreview
                     imgSrc="/images/jwerner.jpg"
                     imgAlt="Bild des Zahnarztes Dr. med. dent. Jürgen Werner"
@@ -87,7 +91,7 @@ export default function LandingPage(props: any) {
                     name="Neuer Name"
                     job="AZUBI, Stuhlassistenz, Labor"
                 />
-                <BaseWidget title="Wir suchen Zahnmedizinische Fachangestellte" className="max-w-[18.75rem] max-h-[18.75rem]" childrenDivClasses="flex w-full h-full justify-end items-end">
+                <BaseWidget title="Wir suchen Zahnmedizinische Fachangestellte" className="order-first sm:order-1 sm:max-w-[18.75rem] max-h-[18.75rem]" childrenDivClasses="flex w-full h-full justify-end items-end">
                     <PrimaryButton url="/bewerben">
                         Hier Bewerben
                         <span class="ml-2">→</span>
