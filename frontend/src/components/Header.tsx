@@ -28,7 +28,7 @@ export default function Header(props: any) {
         <PrimaryButton url="/bewerben" className={`${active("/bewerben")}`}><span>Bewerben</span></PrimaryButton>
       </div>
       <div class="sm:hidden">
-        Mobile Menu
+        MobileMenu
       </div>
     </div>
   );
