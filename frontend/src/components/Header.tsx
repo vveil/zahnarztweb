@@ -27,7 +27,7 @@ export default function Header(props: any) {
         <A class={`${active("/dokumente")} `} href="/dokumente">Dokumente</A>
         <PrimaryButton url="/bewerben" className={`${active("/bewerben")}`}><span>Bewerben</span></PrimaryButton>
       </div>
-      <div class="flex sm:hidden">
+      <div class="sm:hidden">
         Mobile Menu
       </div>
     </div>
