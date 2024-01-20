@@ -4,7 +4,7 @@
 
 @layer base {
     :root {
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
         background-color: #EBF3F6;
     }
 }

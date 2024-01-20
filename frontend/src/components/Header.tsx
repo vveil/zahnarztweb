@@ -1,5 +1,6 @@
 import { A, useLocation } from "@solidjs/router";
 import ApplicationButton from "./ApplicationButton";
+import PrimaryButton from "./PrimaryButton";
 
 export default function Header(props: any) {
   const location = useLocation();
@@ -24,7 +25,7 @@ export default function Header(props: any) {
         <A class={`${active("/aktuelles")} `} href="/aktuelles">Aktuelles</A>
         <A class={`${active("/service")} `} href="/service">Behandlungsspektrum</A>
         <A class={`${active("/dokumente")} `} href="/dokumente">Dokumente</A>
-        <ApplicationButton text="Bewerben" className={`${active("/bewerben")}`} />
+        <PrimaryButton url="/bewerben" className={`${active("/bewerben")}`}><span>Bewerben</span></PrimaryButton>
       </div>
       <div class="flex lg:hidden">
         Mobile Menu

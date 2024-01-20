@@ -13,7 +13,11 @@ module.exports = {
         "light-teal": "#EBF3F6",
         "dark-teal": "#CDD9DE",
         highlight: "#3B7C95",
-        "highlight-light": "#669CB2",
+        "highlight-dark": "#154A5F",
+      },
+      dropShadow: {
+        solid: "4px 4px 0px rgba(60, 137, 128, 1)",
+        "solid-dark": "4px 4px 0px rgba(21, 74, 95, 1)",
       },
     },
   },

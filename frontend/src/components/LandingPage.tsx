@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import ApplicationTeaser from "./ApplicationTeaser";
 import BaseWidget from "./BaseWidget";
 import ContactSmall from "./ContactSmall";
@@ -6,6 +7,7 @@ import HeroText from "./HeroText";
 import OpeningHoursWidget from "./OpeningHoursWidget";
 import ServicesShort from "./ServicesShort";
 import TeamImage from "./TeamImage";
+import DefaultButton from "./DefaultButton";
 
 export default function LandingPage(props: any) {
     return (
@@ -18,7 +20,13 @@ export default function LandingPage(props: any) {
                             <p>Weststraße 70,</p>
                             <p>38126 Braunschweig</p>
                         </div>
-                        <button>TODO Google Button</button>
+                        <DefaultButton
+                            url="https://www.google.com/maps/search/?api=1&query=dr+werner+zahnarzt+rautheim"
+                        >
+                            <span>Auf Google Maps ansehen</span>
+                            <span class="ml-2">→</span>
+                        </DefaultButton>
+
                     </div>
                 </BaseWidget>
                 <BaseWidget title="Öffnungszeiten" className="flex-1">
@@ -49,8 +57,18 @@ export default function LandingPage(props: any) {
                     </div>
                 </BaseWidget>
                 <BaseWidget title="Kontakt" className="flex-1">
+                    <div class="flex flex-col gap-1 mb-6">
+                        <p class="font-semibold">Telefon</p>
+                        <p>0531&thinsp;/&thinsp;6802931</p>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="font-semibold">E-Mail</p>
+                        <a href="mailto:dr.juergenwerner@arcor.de">
+                            dr.juergenwerner@arcor.de
+                        </a>
+                    </div>
                 </BaseWidget>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
