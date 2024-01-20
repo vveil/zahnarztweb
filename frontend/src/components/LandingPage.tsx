@@ -8,6 +8,7 @@ import OpeningHoursWidget from "./OpeningHoursWidget";
 import ServicesShort from "./ServicesShort";
 import TeamImage from "./TeamImage";
 import DefaultButton from "./DefaultButton";
+import EmployeePreview from "./EmployeePreview";
 
 export default function LandingPage(props: any) {
     return (
@@ -68,7 +69,37 @@ export default function LandingPage(props: any) {
                         </a>
                     </div>
                 </BaseWidget>
-            </div >
-        </div >
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold mb-3">Das Team der Praxis</h1>
+                <p class="text-2xl">Wir beraten und behandeln Sie gerne persönlich<br />und individuell auf Ihre Situation angepasst.</p>
+            </div>
+            <div class="flex justify-between">
+                <EmployeePreview
+                    imgSrc="/images/jwerner.jpg"
+                    imgAlt="Bild des Zahnarztes Dr. med. dent. Jürgen Werner"
+                    name="Dr. med. dent. Jürgen&nbsp;Werner"
+                    job="Zahnarzt"
+                />
+                <EmployeePreview
+                    imgSrc="/images/bhillebrecht.jpg"
+                    imgAlt="Bild von Beachte Hillebrecht"
+                    name="Beate Hillebrecht"
+                    job="Rezeption, Prophylaxe"
+                />
+                <EmployeePreview
+                    imgSrc="/images/azubi.jpg"
+                    imgAlt="Bild von der Auszubildenen"
+                    name="Neuer Name"
+                    job="AZUBI, Stuhlassistenz, Labor"
+                />
+                <EmployeePreview
+                    imgSrc="/images/jwerner.jpg"
+                    imgAlt="TODO"
+                    name=""
+                    job="Ausbildung, Praxiswechsel, Festanstellung"
+                />
+            </div>
+        </div>
     )
 }
