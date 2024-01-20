@@ -1,16 +1,14 @@
 import { A } from "@solidjs/router";
 import LandingPage from "~/components/LandingPage";
-import MobileLandingPage from "~/components/MobileLandingPage";
-import SiteHeading from "~/components/SiteHeading";
 import BaseLayout from "~/layouts/BaseLayout";
 
 export default function Impressum() {
   return (
     <main class="">
       <BaseLayout className="">
-        <div class="flex flex-col gap-4 default-width">
+        <div class="flex flex-col gap-4">
 
-          <SiteHeading text='Impressum' className="-mb-2" />
+          <h1 class="text-4xl font-bold">Impressum</h1>
 
           <div>
             Angaben gemäß § 5 TMG <br />

@@ -1,6 +1,6 @@
 import { createSignal, For } from 'solid-js';
 import { A } from "@solidjs/router";
-import SiteHeading from './SiteHeading';
+import HeroText from './HeroText';
 
 const [services] = createSignal(
     [{
@@ -48,19 +48,20 @@ const [services] = createSignal(
 function ServicesList(props: any) {
 
     return (
-        <div class={`${props.className} flex flex-col`}>
-            <SiteHeading text='Unser Behandlungsspektrum' />
-            <ul>
-                <For each={services()}>{(service, i) =>
-                    <A href={`/${service.url}`}>
-                        <li class='mt-2 pb-2 border-b-2'>
-                            <h3 class='text-xl'>{service.title}</h3>
-                            <p>{service.description}</p>
-                        </li>
-                    </A>
-                }</For>
-            </ul>
-        </div>
+        // <div class={`${props.className} flex flex-col`}>
+        //     <SiteHeading text='Unser Behandlungsspektrum' />
+        //     <ul>
+        //         <For each={services()}>{(service, i) =>
+        //             <A href={`/${service.url}`}>
+        //                 <li class='mt-2 pb-2 border-b-2'>
+        //                     <h3 class='text-xl'>{service.title}</h3>
+        //                     <p>{service.description}</p>
+        //                 </li>
+        //             </A>
+        //         }</For>
+        //     </ul>
+        // </div>
+        <p class="text-7xl font-bold">Noch in Arbeit</p>
     );
 }
 

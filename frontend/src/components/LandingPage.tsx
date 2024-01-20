@@ -1,14 +1,8 @@
-import { A } from "@solidjs/router";
-import ApplicationTeaser from "./ApplicationTeaser";
 import BaseWidget from "./BaseWidget";
-import ContactSmall from "./ContactSmall";
-import GoogleLocation from "./GoogleLocation";
 import HeroText from "./HeroText";
-import OpeningHoursWidget from "./OpeningHoursWidget";
-import ServicesShort from "./ServicesShort";
-import TeamImage from "./TeamImage";
 import DefaultButton from "./DefaultButton";
 import EmployeePreview from "./EmployeePreview";
+import PrimaryButton from "./PrimaryButton";
 
 export default function LandingPage(props: any) {
     return (
@@ -93,12 +87,12 @@ export default function LandingPage(props: any) {
                     name="Neuer Name"
                     job="AZUBI, Stuhlassistenz, Labor"
                 />
-                <EmployeePreview
-                    imgSrc="/images/jwerner.jpg"
-                    imgAlt="TODO"
-                    name=""
-                    job="Ausbildung, Praxiswechsel, Festanstellung"
-                />
+                <BaseWidget title="Wir suchen Zahnmedizinische Fachangestellte" className="max-w-[18.75rem] max-h-[18.75rem]" childrenDivClasses="flex w-full h-full justify-end items-end">
+                    <PrimaryButton url="/bewerben">
+                        Hier Bewerben
+                        <span class="ml-2">→</span>
+                    </PrimaryButton>
+                </BaseWidget>
             </div>
         </div>
     )

@@ -23,7 +23,7 @@ export default function Header(props: any) {
       </A>
       <div class="hidden lg:flex gap-8 text-lg items-center">
         <A class={`${active("/aktuelles")} `} href="/aktuelles">Aktuelles</A>
-        <A class={`${active("/service")} `} href="/service">Behandlungsspektrum</A>
+        {/* <A class={`${active("/service")} `} href="/service">Behandlungsspektrum</A> */}
         <A class={`${active("/dokumente")} `} href="/dokumente">Dokumente</A>
         <PrimaryButton url="/bewerben" className={`${active("/bewerben")}`}><span>Bewerben</span></PrimaryButton>
       </div>
