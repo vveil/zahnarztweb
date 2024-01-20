@@ -14,7 +14,7 @@ export default function App() {
         <>
           <Suspense>
             {/* <Nav /> */}
-            <div class="flex justify-center flex-1 w-screen">
+            <div class="flex justify-center flex-1 w-screen font-source-sans">
               <div class="flex flex-col justify-between max-w-[1300px] w-full mx-28 min-h-screen">
                 <div class="w-full">
                   <Header className="pt-20 pb-28" />

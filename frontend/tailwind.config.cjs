@@ -3,8 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      sans: ['"Source Sans Pro"', "sans-serif"],
-      special: ['"Source Serif 4"', "serif"],
+      "source-sans": ['"Source Sans 3"', "sans-serif"],
+      // sans: ['"Source Sans Pro"', "sans-serif"],
+      // special: ['"Source Serif 4"', "serif"],
     },
     extend: {
       colors: {

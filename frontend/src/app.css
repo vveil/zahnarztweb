@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Source Sans 3";
+    src: url("../public/fonts/source_sans_3/SourceSans3-VariableFont_wght.ttf");
+}
+
 @layer base {
+
     :root {
-        font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
         background-color: #EBF3F6;
     }
 }
