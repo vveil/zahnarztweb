@@ -6,7 +6,7 @@ export default function Impressum() {
   return (
     <main class="">
       <BaseLayout className="">
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 mx-5 sm:mx-0">
 
           <h1 class="text-4xl font-bold">Impressum</h1>
 

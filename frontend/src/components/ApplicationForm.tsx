@@ -1,7 +1,6 @@
 import { Component, For, createEffect, createSignal } from "solid-js";
 import { A } from "@solidjs/router";
 import axios from "axios";
-import Contact from "~/routes/contact";
 
 export default function ApplicationForm(props: any) {
     const [selected, setSelected] = createSignal("AZUBI ZMFA");
@@ -49,8 +48,8 @@ export default function ApplicationForm(props: any) {
 
     return (
         <div class={`${props.className}`}>
-            <form onSubmit={handleSubmit} class="flex flex-col gap-4">
-                <div class="form-control flex flex-col gap-2 flex-1">
+            <form onSubmit={handleSubmit} class="flex flex-col gap-2 sm:gap-4 mx-5 sm:mx-0">
+                <div class="form-control flex flex-col gap-1 sm:gap-2 flex-1">
                     <label for="art">Art der Stelle</label>
                     <select class="p-1" id="art" value={selected()} onInput={e => setSelected(e.currentTarget.value)}>
                         <For each={Object.values(options)}>{
@@ -58,26 +57,8 @@ export default function ApplicationForm(props: any) {
                         }</For>
                     </select>
                 </div>
-                <div class="flex gap-4">
-                    <div class="form-control flex flex-col gap-2">
-                        <label for="cv">Lebenslauf</label>
-                        <input class="p-1"
-                            type="file"
-                            id="cv"
-                            onChange={(e) => handleFileChange(e, setCv)}
-                        />
-                    </div>
-                    <div class="form-control flex flex-col gap-2">
-                        <label for="transcript">Zeugnis</label>
-                        <input class="p-1"
-                            type="file"
-                            id="transcript"
-                            onChange={(e) => handleFileChange(e, setTranscript)}
-                        />
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="form-control flex flex-col gap-2 flex-1">
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                    <div class="form-control flex flex-col gap-1 sm:gap-2 flex-1">
                         <label for="surname">Vorname</label>
                         <input class="p-1"
                             type="text"
@@ -86,7 +67,7 @@ export default function ApplicationForm(props: any) {
                             onChange={(e) => setSurname(e.currentTarget.value)}
                         />
                     </div>
-                    <div class="form-control flex flex-col gap-2 flex-1">
+                    <div class="form-control flex flex-col gap-1 sm:gap-2 flex-1">
                         <label class="" for="name">Name</label>
                         <input class="p-1"
                             type="text"
@@ -96,7 +77,7 @@ export default function ApplicationForm(props: any) {
                         />
                     </div>
                 </div>
-                <div class="form-control flex flex-col gap-2">
+                <div class="form-control flex flex-col gap-1 sm:gap-2">
                     <label for="email">E-Mail</label>
                     <input class="p-1"
                         type="text"
@@ -105,8 +86,26 @@ export default function ApplicationForm(props: any) {
                         onChange={(e) => setEmail(e.currentTarget.value)}
                     />
                 </div>
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                    <div class="form-control flex flex-col sm:flex-1 gap-1 sm:gap-2">
+                        <label for="cv">Lebenslauf</label>
+                        <input class="p-1"
+                            type="file"
+                            id="cv"
+                            onChange={(e) => handleFileChange(e, setCv)}
+                        />
+                    </div>
+                    <div class="form-control flex flex-col sm:flex-1 gap-1 sm:gap-2">
+                        <label for="transcript">Zeugnis</label>
+                        <input class="p-1"
+                            type="file"
+                            id="transcript"
+                            onChange={(e) => handleFileChange(e, setTranscript)}
+                        />
+                    </div>
+                </div>
 
-                <input class="form-submit p-2 bg-highlight rounded text-light-teal font-semibold" type="submit" value="Bewerbung abschicken" />
+                <input class="form-submit font-bold py-2 px-4 rounded-lg border-highlight-dark text-white border-2 drop-shadow-solid-dark bg-highlight mt-2" type="submit" value="Bewerbung abschicken" />
             </form >
         </div >
     );

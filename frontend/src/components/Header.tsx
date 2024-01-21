@@ -7,13 +7,13 @@ export default function Header(props: any) {
   const active = (path: string) => {
     if (path == "/bewerben") {
       if (location.pathname == "/bewerben") {
-        return "bg-highlight-light"
+        return "opacity-80"
       }
-      return "hover:bg-highlight-light"
+      return "hover:opacity-80"
     }
     return path == location.pathname
       ? "text-highlight"
-      : "hover:text-highlight-light";
+      : "hover:text-highlight";
   }
   return (
     <div class={`${props.className} flex justify-between mx-5 sm:mx-0`}>

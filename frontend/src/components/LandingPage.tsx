@@ -5,9 +5,12 @@ import EmployeePreview from "./EmployeePreview";
 import PrimaryButton from "./PrimaryButton";
 
 export default function LandingPage(props: any) {
+    const heroText = `Ihr Zahnarzt\nin\u00A0Braunschweig`;
     return (
         <div class={`${props.className} flex flex-col gap-12 sm:gap-24`}>
-            <HeroText />
+            {/* <h1 class="text-4xl sm:text-7xl font-bold">Ihr Zahnarzt</h1>
+            <h1 class="text-4xl sm:text-7xl font-bold">in&nbsp;Braunschweig</h1> */}
+            <HeroText text={heroText} />
             <div class="flex flex-col sm:flex-row gap-8">
                 <BaseWidget title="Anfahrt" className="flex-1" bgColor="sm:bg-dark-teal">
                     <div class="flex flex-col gap-6">
@@ -92,7 +95,7 @@ export default function LandingPage(props: any) {
                     job="AZUBI, Stuhlassistenz, Labor"
                 />
                 <BaseWidget title="Wir suchen Zahnmedizinische Fachangestellte" className="order-first sm:order-1 sm:max-w-[18.75rem] max-h-[18.75rem]" childrenDivClasses="flex w-full h-full justify-end items-end">
-                    <PrimaryButton url="/bewerben">
+                    <PrimaryButton url="/bewerben" className="mb-1">
                         Hier Bewerben
                         <span class="ml-2">→</span>
                     </PrimaryButton>
