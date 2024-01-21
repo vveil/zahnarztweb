@@ -105,7 +105,7 @@ export default function ApplicationForm(props: any) {
                     </div>
                 </div>
 
-                <input class="form-submit font-bold py-2 px-4 rounded-lg border-highlight-dark text-white border-2 drop-shadow-solid-dark bg-highlight mt-2" type="submit" value="Bewerbung abschicken" />
+                <input class="form-submit primary-button w-full mt-2" type="submit" value="Bewerbung abschicken" />
             </form >
         </div >
     );
