@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "Source Sans 3";
-    src: url("fonts/source_sans_3/SourceSans3-VariableFont_wght.ttf");
+    src: url("/fonts/source_sans_3/SourceSans3-VariableFont_wght.ttf");
 }
 
 @layer base {
