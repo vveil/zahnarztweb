@@ -22,4 +22,8 @@
     .primary-button {
         @apply font-bold py-2 px-4 rounded-lg border-highlight-dark text-white w-fit border-2 drop-shadow-solid-dark bg-highlight
     }
+
+    .default-button {
+        @apply font-bold py-2 rounded-lg border-highlight text-highlight w-fit px-3 border-2 drop-shadow-solid bg-dark-teal
+    }
 }
