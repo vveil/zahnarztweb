@@ -1,9 +1,19 @@
 import { A } from "@solidjs/router";
+import { JSX, createResource } from "solid-js";
 import BaseWidget from "~/components/BaseWidget";
 import HeroText from "~/components/HeroText";
 import BaseLayout from "~/layouts/BaseLayout";
 
 export default function Aktuelles() {
+  const [articles] = createResource(fetchArticleList);
+
+  async function fetchArticleList() {
+    const response = await fetch('/articles/articles.json');
+    const data = await response.json();
+    console.log(data); // Log the resolved JSON
+    return data;
+  }
+
   return (
     <main class="">
       <BaseLayout className="">
@@ -18,6 +28,13 @@ export default function Aktuelles() {
             </div>
           </BaseWidget>
         </div>
+        {/* {articles() && (
+          <ul>
+            {articles().map((file: any) => (
+              <li><A href={`/articles/${file}`}>Article {file}</A></li>
+            ))}
+          </ul>
+        )} */}
       </BaseLayout>
     </main>
   );
