@@ -28,7 +28,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: docker/build-push-action@v5.1.0
-        name: Build and push Docker image to GH packages
+        name: Build and push frontend image
         with:
           context: ./frontend
           file: ./frontend/Dockerfile
@@ -36,12 +36,20 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.frontend:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.frontend:latest
 
       - uses: docker/build-push-action@v5.1.0
-        name: Build and push Docker image to GH packages
+        name: Build and push backend image
         with:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:latest
+
+      - uses: docker/build-push-action@v5.1.0
+        name: Build and push cms image
+        with:
+          context: ./cms
+          file: ./cms/Dockerfile
+          push: true
+          tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.cms:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.cms:latest
 
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
