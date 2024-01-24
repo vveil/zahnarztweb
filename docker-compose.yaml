@@ -17,68 +17,68 @@ services:
     # ports:
     #   - "3001:3001"
 
-  cms:
-    container_name: cms
-    # build: .
-    image: ghcr.io/vveil/zahnarztweb.cms:latest
-    restart: unless-stopped
-    env_file: ./cms/.env
-    environment:
-      DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_HOST: cmsDB
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PORT: ${DATABASE_PORT}
-      JWT_SECRET: ${JWT_SECRET}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      NODE_ENV: ${NODE_ENV}
-    volumes:
-      - ./cms/config:/opt/app/config
-      - ./cms/src:/opt/app/src
-      - ./cms/package.json:/opt/package.json
-      - ./cms/package-lock.json:/opt/package-lock.json
+  # cms:
+  #   container_name: cms
+  #   # build: .
+  #   image: ghcr.io/vveil/zahnarztweb.cms:latest
+  #   restart: unless-stopped
+  #   env_file: ./cms/.env
+  #   environment:
+  #     DATABASE_CLIENT: ${DATABASE_CLIENT}
+  #     DATABASE_HOST: cmsDB
+  #     DATABASE_NAME: ${DATABASE_NAME}
+  #     DATABASE_USERNAME: ${DATABASE_USERNAME}
+  #     DATABASE_PORT: ${DATABASE_PORT}
+  #     JWT_SECRET: ${JWT_SECRET}
+  #     ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+  #     DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+  #     NODE_ENV: ${NODE_ENV}
+  #   volumes:
+  #     - ./cms/config:/opt/app/config
+  #     - ./cms/src:/opt/app/src
+  #     - ./cms/package.json:/opt/package.json
+  #     - ./cms/package-lock.json:/opt/package-lock.json
 
-      - ./cms/.env:/opt/app/.env
-      - ./cms/public/uploads:/opt/app/public/uploads
-    ports:
-      - "1337:1337"
-    networks:
-      - cms
-    depends_on:
-      - cmsDB
+  #     - ./cms/.env:/opt/app/.env
+  #     - ./cms/public/uploads:/opt/app/public/uploads
+  #   ports:
+  #     - "1337:1337"
+  #   networks:
+  #     - cms
+  #   depends_on:
+  #     - cmsDB
 
-  cmsDB:
-    container_name: cmsDB
-    platform: linux/amd64 #for platform error on Apple M1 chips
-    restart: unless-stopped
-    env_file: ./cms/.env
-    image: postgres:14.5-alpine
-    environment:
-      POSTGRES_USER: ${DATABASE_USERNAME}
-      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-      POSTGRES_DB: ${DATABASE_NAME}
-    volumes:
-      - cms-data:/var/lib/postgresql/data/ #using a volume
-      #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+  # cmsDB:
+  #   container_name: cmsDB
+  #   platform: linux/amd64 #for platform error on Apple M1 chips
+  #   restart: unless-stopped
+  #   env_file: ./cms/.env
+  #   image: postgres:14.5-alpine
+  #   environment:
+  #     POSTGRES_USER: ${DATABASE_USERNAME}
+  #     POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+  #     POSTGRES_DB: ${DATABASE_NAME}
+  #   volumes:
+  #     - cms-data:/var/lib/postgresql/data/ #using a volume
+  #     #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
 
-    ports:
-      - "5432:5432"
-    networks:
-      - cms
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - cms
 
-  cmsAdminer:
-    container_name: cmsAdminer
-    image: adminer
-    restart: unless-stopped
-    ports:
-      - "9090:8080"
-    environment:
-      - ADMINER_DEFAULT_SERVER=cmsDB
-    networks:
-      - cms
-    depends_on:
-      - cmsDB
+  # cmsAdminer:
+  #   container_name: cmsAdminer
+  #   image: adminer
+  #   restart: unless-stopped
+  #   ports:
+  #     - "9090:8080"
+  #   environment:
+  #     - ADMINER_DEFAULT_SERVER=cmsDB
+  #   networks:
+  #     - cms
+  #   depends_on:
+  #     - cmsDB
 
   caddy:
     image: caddy:2
@@ -93,9 +93,8 @@ services:
 volumes:
   caddy_data:
   caddy_config:
-  cms-data:
-
-networks:
-  cms:
-    name: Cms
-    driver: bridge
+  # cms-data:
+# networks:
+#   cms:
+#     name: Cms
+#     driver: bridge

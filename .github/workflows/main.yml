@@ -43,13 +43,13 @@ jobs:
           push: true
           tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:latest
 
-      - uses: docker/build-push-action@v5.1.0
-        name: Build and push cms image
-        with:
-          context: ./cms
-          file: ./cms/Dockerfile
-          push: true
-          tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.cms:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.cms:latest
+      # - uses: docker/build-push-action@v5.1.0
+      #   name: Build and push cms image
+      #   with:
+      #     context: ./cms
+      #     file: ./cms/Dockerfile
+      #     push: true
+      #     tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.cms:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.cms:latest
 
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
