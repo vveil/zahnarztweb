@@ -3,5 +3,5 @@ zahnarzt.niklas.ai {
 }
 
 zahncms.niklas.ai {
-    reverse_proxy cms:1337
+    reverse_proxy localhost:1337
 }
