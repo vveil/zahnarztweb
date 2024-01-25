@@ -20,7 +20,7 @@ services:
   cms:
     container_name: cms
     build: ./cms
-    image: cms:latest
+    # image: cms:latest
     restart: unless-stopped
     env_file: .env
     environment:
