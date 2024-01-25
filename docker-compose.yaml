@@ -16,6 +16,8 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+    networks:
+      - cms
 
   cms:
     container_name: cms
