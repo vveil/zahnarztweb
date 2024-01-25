@@ -1,3 +1,7 @@
 zahnarzt.niklas.ai {
     reverse_proxy solidjs-frontend:3000
 }
+
+zahncms.niklas.ai {
+    reverse_proxy cms:1337
+}
