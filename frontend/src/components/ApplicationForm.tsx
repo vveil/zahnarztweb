@@ -29,7 +29,7 @@ export default function ApplicationForm(props: any) {
 
         try {
             // Make a POST request to the backend
-            const response = await axios.post("http://localhost:3001/api/application", dataToSubmit);
+            const response = await axios.post("https://zahnarzt.niklas.ai/api/application", dataToSubmit);
         } catch (error) {
             console.error("Error uploading files:", error);
         }
