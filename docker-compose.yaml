@@ -3,13 +3,11 @@ version: "3.8"
 services:
   solidjs-frontend:
     image: ghcr.io/vveil/zahnarztweb.frontend:latest
-    env_file: .env
     networks:
       - cms
 
   node-backend:
     image: ghcr.io/vveil/zahnarztweb.backend:latest
-    env_file: .env
     networks:
       - cms
 
