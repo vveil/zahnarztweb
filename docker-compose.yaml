@@ -9,7 +9,7 @@ services:
   node-backend:
     image: ghcr.io/vveil/zahnarztweb.backend:latest
     volumes:
-      - ./backend/uploads:/app/uploads
+      - ./backend/uploads:/usr/src/app/uploads
     networks:
       - cms
 
