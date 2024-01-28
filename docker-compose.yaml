@@ -10,5 +10,6 @@ services:
       - ./backend/uploads:/usr/src/app/uploads
 
 networks:
-  webnet:
-    external: true
+  default:
+    external:
+      name: webnet
