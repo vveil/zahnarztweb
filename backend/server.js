@@ -95,7 +95,7 @@ app.post(
         res.send("POST request to the endpoint");
       }
     });
-  }
+  },
 );
 
 app.get("/test", (req, res) => {
@@ -103,5 +103,5 @@ app.get("/test", (req, res) => {
 });
 
 app.listen(PORT, () =>
-  console.log(`Example app is listening on port ${PORT}.`)
+  console.log(`Example app is listening on port ${PORT}.`),
 );
