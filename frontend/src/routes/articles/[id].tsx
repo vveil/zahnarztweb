@@ -1,30 +1,62 @@
-// import { useParams } from "@solidjs/router";
-// import { Show, createResource } from "solid-js";
+import { useParams } from "@solidjs/router";
+import { Show, createResource } from "solid-js";
+import HeroText from "~/components/HeroText";
+import BaseLayout from "~/layouts/BaseLayout";
 
-// export default function Article(props: any) {
+function serializeDate(dateString: string): string {
+  const date = new Date(dateString);
+  console.log(dateString);
+  console.log(date);
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0"); // +1 because months are 0-indexed
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
 
-//     const params = useParams();
-//     const [articleContent] = createResource(fetchArticleContent);
+export default function Article(props: any) {
+  // const CMS_URL = import.meta.env.VITE_CMS_BASE_URL;
+  const CMS_URL = "https://zahncms.niklas.ai";
+  const params = useParams();
+  const [article] = createResource(fetchArticleContent);
 
-//     async function fetchArticleContent() {
-//         const response = await fetch(`/articles/${params.id}.txt`);
-//         const content = await response.text();
-//         console.log("content", content)
-//         return content;
-//     }
+  async function fetchArticleContent() {
+    console.log("paramid", params.id);
+    const response = await fetch(`${CMS_URL}/api/articles/${params.id}`);
+    const data = await response.json();
+    console.log("data", data);
+    return data;
+  }
 
-//     const articleImg = `/articles/images/${params.id}.jpg`;
-
-//     return (
-//         <div>
-//             <Show when={articleImg}>
-//                 <img src={articleImg} class="w-fit h-auto" />
-//             </Show>
-//             <div>
-//                 {articleContent()}
-//             </div>
-//         </div>
-//     )
-
-
-// }
+  return (
+    <BaseLayout>
+      <div>
+        <Show when={article()}>
+          <div class="">
+            <Show
+              when={article().releaseDate !== undefined}
+              fallback={<p class="italic">Dr. Jürgen Werner</p>}
+            >
+              <p class="italic">
+                {serializeDate(article().releaseDate)}, Dr. Jürgen Werner
+              </p>
+            </Show>
+            <HeroText text={`${article().title}`} className="mb-12" />
+          </div>
+          <div class="flex gap-20">
+            <p class="max-w-[800px] flex-1 text-justify text-2xl">
+              {article().content}
+            </p>
+            <div class="flex w-[500px] flex-col items-center gap-2">
+              <img
+                src={`${CMS_URL}${article().url}`}
+                class="h-fit rounded"
+                alt={`${article().altImageText}`}
+              />
+              <p>{article().imageCaption}</p>
+            </div>
+          </div>
+        </Show>
+      </div>
+    </BaseLayout>
+  );
+}
