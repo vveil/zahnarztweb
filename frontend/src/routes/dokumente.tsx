@@ -5,7 +5,7 @@ import HeroText from "~/components/HeroText";
 import BaseLayout from "~/layouts/BaseLayout";
 
 export default function Dokumente(props: any) {
-  const anamneseFile = "documents/anamnesebogen.pdf";
+  const anamneseFile = "/documents/anamnesebogen.pdf";
   const [showAnamnese, setShowAnamnese] = createSignal(false);
   return (
     <BaseLayout>
@@ -34,7 +34,7 @@ export default function Dokumente(props: any) {
                   Bearbeiten<span class="ml-2">→</span>
                 </button>
                 <A
-                  href="documents/anamesebogen.pdf"
+                  href="/documents/anamnesebogen.pdf"
                   download="AnamnesebogenDrJürgenWerner.pdf"
                   class="primary-button flex-1 text-center"
                 >
@@ -48,7 +48,7 @@ export default function Dokumente(props: any) {
             >
               <div class="flex">
                 <A
-                  href="documents/verhaltensmaßnahmen.pdf"
+                  href="/documents/verhaltensmaßnahmen.pdf"
                   download="Verhaltenmaßnahmen.pdf"
                   class="primary-button flex-1 text-center"
                 >
