@@ -32,7 +32,7 @@ export default function Aktuelles() {
                       href={`/articles/${article.id}`}
                     >
                       <h2>{article.title}</h2>
-                      <span class="drop-shadow-solid-light text-highlight font-bold">
+                      <span class="drop-shadow-solid-light text-highlight font-bold sm:pr-2">
                         →
                       </span>
                     </A>
