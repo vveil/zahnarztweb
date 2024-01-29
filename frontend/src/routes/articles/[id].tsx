@@ -1,4 +1,4 @@
-import { useParams } from "@solidjs/router";
+import { useNavigate, useParams } from "@solidjs/router";
 import { Show, createResource } from "solid-js";
 import HeroText from "~/components/HeroText";
 import BaseLayout from "~/layouts/BaseLayout";
@@ -18,18 +18,22 @@ export default function Article(props: any) {
   const CMS_URL = "https://zahncms.niklas.ai";
   const params = useParams();
   const [article] = createResource(fetchArticleContent);
+  const navigate = useNavigate();
 
   async function fetchArticleContent() {
     console.log("paramid", params.id);
     const response = await fetch(`${CMS_URL}/api/articles/${params.id}`);
     const data = await response.json();
     console.log("data", data);
+    if ("errors" in data) {
+      navigate("/404");
+    }
     return data;
   }
 
   return (
     <BaseLayout>
-      <div>
+      <div class="mx-5 sm:mx-0">
         <Show when={article()}>
           <div class="">
             <Show
@@ -40,13 +44,13 @@ export default function Article(props: any) {
                 {serializeDate(article().releaseDate)}, Dr. Jürgen Werner
               </p>
             </Show>
-            <HeroText text={`${article().title}`} className="mb-12" />
+            <HeroText text={`${article().title}`} className="mb-10 sm:mb-12" />
           </div>
-          <div class="flex gap-20">
-            <p class="max-w-[800px] flex-1 text-justify text-2xl">
+          <div class="flex flex-col-reverse gap-10 sm:flex-row sm:gap-20">
+            <p class="max-w-[800px] flex-1 text-justify text-xl sm:text-2xl">
               {article().content}
             </p>
-            <div class="flex w-[500px] flex-col items-center gap-2">
+            <div class="max-w-screen flex flex-col items-center gap-2 sm:w-[500px]">
               <img
                 src={`${CMS_URL}${article().url}`}
                 class="h-fit rounded"

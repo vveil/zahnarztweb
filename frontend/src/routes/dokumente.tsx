@@ -20,7 +20,7 @@ export default function Dokumente(props: any) {
           <iframe src={anamneseFile} class="h-[62.5rem] w-full"></iframe>
         </Show>
         <Show when={!showAnamnese()}>
-          <HeroText text="Dokumente" className="mb-12" />
+          <HeroText text="Dokumente" className="mx-5 mb-12 sm:mx-0" />
           <div class="mx-5 flex flex-col gap-8 sm:mx-0 sm:flex-row">
             <BaseWidget
               title="Anamnesebogen"

@@ -17,13 +17,16 @@ export default function Aktuelles() {
   return (
     <main class="">
       <BaseLayout className="">
-        <HeroText text="Aktuelles" className="mb-12" />
-        <div class="flex flex-col gap-14 text-2xl sm:flex-row">
+        <HeroText text="Aktuelles" className="mx-5 mb-12 sm:mx-0" />
+        <div class="flex flex-col-reverse gap-14 text-2xl sm:flex-row">
           <Show when={articles()}>
             <div class="flex h-fit flex-1 flex-col">
+              <h1 class="mx-5 mb-5 text-2xl font-bold sm:mx-0">
+                Unsere Artikel
+              </h1>
               <For each={articles().docs}>
                 {(article) => (
-                  <div class="border-dark-teal flex h-fit flex-1 justify-between border-b-2 py-3">
+                  <div class="border-dark-teal flex h-fit flex-1 justify-between border-b-2 px-5 py-3 sm:px-0">
                     <A
                       class="flex flex-1 justify-between"
                       href={`/articles/${article.id}`}
@@ -40,7 +43,7 @@ export default function Aktuelles() {
           </Show>
           <BaseWidget
             title="Weiterführende Links"
-            className="mx-5 hidden h-fit w-fit sm:mx-0 sm:flex"
+            className="flex h-fit px-5 sm:mx-0 sm:w-fit sm:p-7"
           >
             <div class="flex flex-col gap-1">
               <A
