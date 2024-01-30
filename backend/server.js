@@ -42,6 +42,7 @@ app.post(
   ]),
   function (req, res) {
     console.log("reached backend");
+    console.log("google", process.env.GOOGLE_APP_ACC);
     const cvFile = req.files["cv"] ? req.files["cv"][0] : null;
     const transcriptFile = req.files["transcript"]
       ? req.files["transcript"][0]
