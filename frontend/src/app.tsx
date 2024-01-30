@@ -13,10 +13,10 @@ export default function App() {
         <>
           <Suspense>
             {/* <Nav /> */}
-            <div class="flex justify-center flex-1 w-screen font-source-sans">
-              <div class="flex flex-col justify-between max-w-[1300px] w-full sm:mx-28 min-h-screen">
+            <div class="font-source-sans flex w-screen flex-1 justify-center">
+              <div class="flex min-h-screen w-full max-w-[1300px] flex-col justify-between lg:mx-28">
                 <div class="w-full">
-                  <Header className="pt-5 pb-12 sm:pt-20 sm:pb-28" />
+                  <Header className="pb-12 pt-5 lg:pb-28 lg:pt-20" />
                   {props.children}
                 </div>
                 <Footer className="mt-8 pb-8" />

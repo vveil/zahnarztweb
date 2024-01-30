@@ -7,6 +7,7 @@ export default function ApplicationForm(props: any) {
   const [name, setName] = createSignal("");
   const [surname, setSurname] = createSignal("");
   const [email, setEmail] = createSignal("");
+  const [datenConsent, setDatenConsent] = createSignal(false);
   const [cv, setCv] = createSignal<File | null>(null);
   const [transcript, setTranscript] = createSignal<File | null>(null);
 
@@ -33,10 +34,6 @@ export default function ApplicationForm(props: any) {
         "https://zahnarzt.niklas.ai/api/application",
         dataToSubmit,
       );
-      // const response = await axios.post(
-      //   "http://localhost:3001/api/application",
-      //   dataToSubmit,
-      // );
     } catch (error) {
       console.error("Error uploading files:", error);
     }
@@ -63,12 +60,16 @@ export default function ApplicationForm(props: any) {
         class="mx-5 flex flex-col gap-2 sm:mx-0 sm:gap-4"
       >
         <div class="form-control flex flex-1 flex-col gap-1 sm:gap-2">
-          <label for="art">Art der Stelle</label>
+          <label for="art">
+            Art der Stelle&thinsp;
+            <span class="text-red-600">*</span>
+          </label>
           <select
             class="p-1"
             id="art"
             value={selected()}
             onInput={(e) => setSelected(e.currentTarget.value)}
+            required
           >
             <For each={Object.values(options)}>
               {(opt) => <option value={opt}>{opt}</option>}
@@ -77,18 +78,23 @@ export default function ApplicationForm(props: any) {
         </div>
         <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
           <div class="form-control flex flex-1 flex-col gap-1 sm:gap-2">
-            <label for="surname">Vorname</label>
+            <label for="surname">
+              Vorname&thinsp;
+              <span class="text-red-600">*</span>
+            </label>
             <input
               class="p-1"
               type="text"
               id="surname"
               value={surname()}
               onChange={(e) => setSurname(e.currentTarget.value)}
+              required
             />
           </div>
           <div class="form-control flex flex-1 flex-col gap-1 sm:gap-2">
             <label class="" for="name">
-              Name
+              Name&thinsp;
+              <span class="text-red-600">*</span>
             </label>
             <input
               class="p-1"
@@ -96,38 +102,68 @@ export default function ApplicationForm(props: any) {
               id="name"
               value={name()}
               onChange={(e) => setName(e.currentTarget.value)}
+              required
             />
           </div>
         </div>
         <div class="form-control flex flex-col gap-1 sm:gap-2">
-          <label for="email">E-Mail</label>
+          <label for="email">
+            E-Mail&thinsp;
+            <span class="text-red-600">*</span>
+          </label>
           <input
             class="p-1"
             type="text"
             id="email"
             value={email()}
             onChange={(e) => setEmail(e.currentTarget.value)}
+            required
           />
         </div>
         <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
           <div class="form-control flex flex-col gap-1 sm:flex-1 sm:gap-2">
-            <label for="cv">Lebenslauf</label>
+            <label for="cv">
+              Lebenslauf&thinsp;
+              <span class="text-red-600">*</span>
+            </label>
             <input
               class="p-1"
               type="file"
               id="cv"
               onChange={(e) => handleFileChange(e, setCv)}
+              required
             />
           </div>
           <div class="form-control flex flex-col gap-1 sm:flex-1 sm:gap-2">
-            <label for="transcript">Zeugnis</label>
+            <label for="transcript">
+              Zeugnis&thinsp;
+              <span class="text-red-600">*</span>
+            </label>
             <input
               class="p-1"
               type="file"
               id="transcript"
               onChange={(e) => handleFileChange(e, setTranscript)}
+              required
             />
           </div>
+        </div>
+        <div class="form-control flex items-start gap-1 sm:gap-2">
+          <input
+            class="mt-1 p-1"
+            type="checkbox"
+            id="datens"
+            checked={datenConsent()}
+            onChange={(e) => setDatenConsent(e.currentTarget.checked)}
+            required
+          />
+          <label for="datens">
+            Ich bin damit einverstanden, dass alle meine zuvor angebenen Daten
+            per E-Mail an dr.juergenwerner@arcor.de versendet werden und von
+            diesem im Sinne des Bewerbungsprozesses verarbeitet werden. Die
+            Daten werden nicht an Dritte weitergegeben.&thinsp;
+            <span class="text-red-600">*</span>
+          </label>
         </div>
 
         <input

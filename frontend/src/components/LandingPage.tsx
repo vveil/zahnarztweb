@@ -7,15 +7,15 @@ import PrimaryButton from "./PrimaryButton";
 export default function LandingPage(props: any) {
   const heroText = `Ihr Zahnarzt\nin\u00A0Braunschweig`;
   return (
-    <div class={`${props.className} flex flex-col gap-12 sm:gap-24`}>
+    <div class={`${props.className} flex flex-col gap-12 lg:gap-24`}>
       {/* <h1 class="text-4xl sm:text-7xl font-bold">Ihr Zahnarzt</h1>
             <h1 class="text-4xl sm:text-7xl font-bold">in&nbsp;Braunschweig</h1> */}
-      <HeroText text={heroText} className="mx-5 sm:mx-0" />
-      <div class="flex flex-col gap-8 sm:flex-row">
+      <HeroText text={heroText} className="mx-5 lg:mx-0" />
+      <div class="flex flex-col gap-8 sm:mx-5 md:flex-row lg:mx-0">
         <BaseWidget
           title="Anfahrt"
           className="flex-1"
-          bgColor="sm:bg-dark-teal"
+          bgColor="md:bg-dark-teal"
         >
           <div class="flex flex-col gap-6">
             <div>
@@ -58,7 +58,7 @@ export default function LandingPage(props: any) {
         <BaseWidget
           title="Kontakt"
           className="flex-1"
-          bgColor="sm:bg-dark-teal"
+          bgColor="md:bg-dark-teal"
         >
           <div class="mb-6 flex flex-col gap-1">
             <p class="font-semibold">Telefon</p>
@@ -73,16 +73,16 @@ export default function LandingPage(props: any) {
         </BaseWidget>
       </div>
       <div>
-        <h1 class="mx-5 mb-3 text-4xl font-bold sm:mx-0">
+        <h1 class="mx-5 mb-3 text-4xl font-bold lg:mx-0">
           Das Team der Praxis
         </h1>
-        <p class="mx-5 text-2xl sm:mx-0">
+        <p class="mx-5 text-2xl lg:mx-0">
           Wir beraten und behandeln Sie gerne persönlich und
           <span class="hidden sm:block"> </span>
           individuell auf Ihre Situation angepasst.
         </p>
       </div>
-      <div class="flex flex-col justify-between gap-10 sm:flex-row sm:gap-0">
+      <div class="flex w-screen flex-col justify-between gap-10 sm:justify-around md:w-auto md:flex-row md:flex-wrap lg:justify-between lg:gap-0">
         <EmployeePreview
           imgSrc="/images/jwerner.jpg"
           imgAlt="Bild des Zahnarztes Dr. med. dent. Jürgen Werner"

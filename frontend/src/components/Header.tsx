@@ -18,7 +18,7 @@ export default function Header(props: any) {
       : "hover:text-highlight";
   };
   return (
-    <div class={`${props.className} mx-5 flex justify-between sm:mx-0`}>
+    <div class={`${props.className} mx-5 flex justify-between lg:mx-0`}>
       <A href="/" class="flex flex-col">
         <h1 class="text-dark-blue text-start text-xl font-semibold md:text-2xl">
           Zahnarztpraxis
@@ -27,7 +27,7 @@ export default function Header(props: any) {
           Dr. med. dent. Jürgen&nbsp;Werner
         </h1>
       </A>
-      <div class="hidden items-center gap-8 text-lg lg:flex">
+      <div class="hidden items-center gap-8 text-lg md:flex">
         <A class={`${active("/aktuelles")} `} href="/aktuelles">
           Aktuelles
         </A>
@@ -39,7 +39,7 @@ export default function Header(props: any) {
           <span>Bewerben</span>
         </PrimaryButton>
       </div>
-      <div class="sm:hidden">
+      <div class="md:hidden">
         <div class="space-y-[6px]" onClick={() => setIsOpen(!isOpen())}>
           <span class="bg-dark-blue block h-0.5 w-8"></span>
           <span class="bg-dark-blue block h-0.5 w-8"></span>

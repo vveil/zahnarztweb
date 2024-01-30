@@ -14,7 +14,6 @@ function serializeDate(dateString: string): string {
 }
 
 export default function Article(props: any) {
-  // const CMS_URL = import.meta.env.VITE_CMS_BASE_URL;
   const CMS_URL = "https://zahncms.niklas.ai";
   const params = useParams();
   const [article] = createResource(fetchArticleContent);

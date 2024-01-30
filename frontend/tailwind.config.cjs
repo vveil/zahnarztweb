@@ -2,6 +2,17 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      sm: "393px",
+
+      md: "1024px",
+
+      lg: "1536px",
+
+      xl: "1920px",
+
+      "2xl": "2560px",
+    },
     fontFamily: {
       "source-sans": ['"Source Sans 3"', "sans-serif"],
       // sans: ['"Source Sans Pro"', "sans-serif"],
