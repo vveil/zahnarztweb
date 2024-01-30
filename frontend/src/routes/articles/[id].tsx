@@ -47,7 +47,7 @@ export default function Article(props: any) {
             <HeroText text={`${article().title}`} className="mb-10 sm:mb-12" />
           </div>
           <div class="flex flex-col-reverse gap-10 sm:flex-row sm:gap-20">
-            <p class="max-w-[800px] flex-1 text-justify text-xl sm:text-2xl">
+            <p class="max-w-[800px] flex-1 text-left text-lg sm:text-xl">
               {article().content}
             </p>
             <div class="max-w-screen flex flex-col items-center gap-2 sm:w-[500px]">
@@ -56,7 +56,7 @@ export default function Article(props: any) {
                 class="h-fit rounded"
                 alt={`${article().altImageText}`}
               />
-              <p>{article().imageCaption}</p>
+              <p class="">{article().imageCaption}</p>
             </div>
           </div>
         </Show>
