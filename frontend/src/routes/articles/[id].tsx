@@ -50,7 +50,7 @@ export default function Article(props: any) {
             <p class="max-w-[800px] flex-1 text-left text-lg sm:text-xl">
               {article().content}
             </p>
-            <div class="max-w-screen flex flex-col items-center gap-2 sm:w-[500px]">
+            <div class="max-w-screen flex h-auto flex-col items-center gap-2 sm:w-[500px]">
               <img
                 src={`${CMS_URL}${article().url}`}
                 class="h-fit rounded"
