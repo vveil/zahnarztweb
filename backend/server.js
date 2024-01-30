@@ -9,21 +9,28 @@ const crypto = require("crypto");
 
 require("dotenv").config();
 
-// Function to overwrite and delete the file
-function secureDelete(filePath, callback) {
-  fs.stat(filePath, (err, stats) => {
-    if (err) {
-      return callback(err);
-    }
-
-    const fileSize = stats.size;
-    const randomData = crypto.randomBytes(fileSize);
-    fs.writeFile(filePath, randomData, (err) => {
+function secureDelete(filePath) {
+  return new Promise((resolve, reject) => {
+    fs.stat(filePath, (err, stats) => {
       if (err) {
-        return callback(err);
+        return reject(err);
       }
 
-      fs.unlink(filePath, callback);
+      const fileSize = stats.size;
+      const randomData = crypto.randomBytes(fileSize);
+      fs.writeFile(filePath, randomData, (err) => {
+        if (err) {
+          return reject(err);
+        }
+
+        fs.unlink(filePath, (err) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve();
+          }
+        });
+      });
     });
   });
 }
@@ -62,7 +69,7 @@ app.post(
     { name: "cv", maxCount: 1 },
     { name: "transcript", maxCount: 1 },
   ]),
-  function (req, res) {
+  async function (req, res) {
     const cvFile = req.files["cv"] ? req.files["cv"][0] : null;
     const transcriptFile = req.files["transcript"]
       ? req.files["transcript"][0]
@@ -103,40 +110,32 @@ app.post(
       ],
     };
 
-    // Send email
-    transporter
-      .sendMail(mailOptions, function (error, info) {
-        if (error) {
-          console.error("Error sending email:", error);
-          res.status(500).json({ message: "Internal server error" });
-        } else {
-          console.log("Email sent:", info.response);
-          res.send("POST request to the endpoint");
-        }
-      })
-      .then(() => {
-        secureDelete(cvPath, (err) => {
-          if (err) {
-            console.error("Error during secure deletion:", err);
+    try {
+      // Send email
+      await new Promise((resolve, reject) => {
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            reject(error);
           } else {
-            console.log("File securely deleted");
-          }
-        });
-        secureDelete(transcriptPath, (err) => {
-          if (err) {
-            console.error("Error during secure deletion:", err);
-          } else {
-            console.log("File securely deleted");
+            console.log("Email sent:", info.response);
+            resolve(info);
           }
         });
       });
+
+      // Securely delete files
+      await secureDelete(cvPath);
+      console.log("CV file securely deleted");
+
+      await secureDelete(transcriptPath);
+      console.log("Transcript file securely deleted");
+
+      res.send("POST request to the endpoint");
+    } catch (error) {
+      console.error("Error:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
   },
 );
 
-app.get("/test", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.listen(PORT, () =>
-  console.log(`Example app is listening on port ${PORT}.`),
-);
+app.listen(PORT, () => console.log(`backend is listening on port ${PORT}.`));
