@@ -3,8 +3,30 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
 
 require("dotenv").config();
+
+// Function to overwrite and delete the file
+function secureDelete(filePath, callback) {
+  fs.stat(filePath, (err, stats) => {
+    if (err) {
+      return callback(err);
+    }
+
+    const fileSize = stats.size;
+    const randomData = crypto.randomBytes(fileSize);
+    fs.writeFile(filePath, randomData, (err) => {
+      if (err) {
+        return callback(err);
+      }
+
+      fs.unlink(filePath, callback);
+    });
+  });
+}
 
 const app = express();
 const PORT = 3001;
@@ -41,15 +63,12 @@ app.post(
     { name: "transcript", maxCount: 1 },
   ]),
   function (req, res) {
-    console.log("reached backend");
-    console.log("google", process.env.GOOGLE_APP_ACC);
     const cvFile = req.files["cv"] ? req.files["cv"][0] : null;
     const transcriptFile = req.files["transcript"]
       ? req.files["transcript"][0]
       : null;
 
     if (!cvFile || !transcriptFile) {
-      console.log("one file missing");
       return res
         .status(400)
         .json({ message: "Both CV and Transcript files are required" });
@@ -74,13 +93,9 @@ app.post(
       subject: "New Job Application",
       html: `
         <p>Name: ${name}</p>
-        <p>Surname: ${surname}</p>
+        <p>Nachname: ${surname}</p>
         <p>Email: ${email}</p>
         <p>Stelle: ${stelle}</p>
-        <p>CV Original Name: ${cvOriginalName}</p>
-        <p>CV Path: ${cvPath}</p>
-        <p>Transcript Original Name: ${transcriptOriginalName}</p>
-        <p>Transcript Path: ${transcriptPath}</p>
       `,
       attachments: [
         { filename: cvOriginalName, path: cvPath },
@@ -96,6 +111,20 @@ app.post(
       } else {
         console.log("Email sent:", info.response);
         res.send("POST request to the endpoint");
+      }
+    });
+    secureDelete(cvPath, (err) => {
+      if (err) {
+        console.error("Error during secure deletion:", err);
+      } else {
+        console.log("File securely deleted");
+      }
+    });
+    secureDelete(transcriptPath, (err) => {
+      if (err) {
+        console.error("Error during secure deletion:", err);
+      } else {
+        console.log("File securely deleted");
       }
     });
   },
