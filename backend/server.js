@@ -11,7 +11,9 @@ const PORT = 3001;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors({ origin: "*" }));
+app.use(
+  cors({ origin: ["http://localhost:3000", "https://zahnarzt.niklas.ai"] }),
+);
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -27,8 +29,8 @@ const upload = multer({ storage: storage });
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: process.env.GOOGLE_APP_ACC, // Replace with your Gmail email address
-    pass: process.env.GOOGLE_APP_PASSWORD, // Replace with your Gmail password
+    user: process.env.GOOGLE_APP_ACC,
+    pass: process.env.GOOGLE_APP_PASSWORD,
   },
 });
 
