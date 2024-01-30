@@ -6,10 +6,10 @@ export default function EmployeePreview(props: any) {
         src={`${props.imgSrc}`}
         alt={`${props.altText}`}
       />
-      <p class="mx-5 mb-1 text-2xl font-semibold sm:text-3xl md:mx-0">
+      <p class="mx-5 mb-1 text-2xl font-semibold sm:text-3xl md:mx-0 lg:text-2xl">
         {props.name}
       </p>
-      <p class="mx-5 text-xl sm:text-2xl md:mx-0">{props.job}</p>
+      <p class="mx-5 text-xl sm:text-2xl md:mx-0 lg:text-xl">{props.job}</p>
     </div>
   );
 }
