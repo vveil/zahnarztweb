@@ -104,29 +104,32 @@ app.post(
     };
 
     // Send email
-    transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.error("Error sending email:", error);
-        res.status(500).json({ message: "Internal server error" });
-      } else {
-        console.log("Email sent:", info.response);
-        res.send("POST request to the endpoint");
-      }
-    });
-    secureDelete(cvPath, (err) => {
-      if (err) {
-        console.error("Error during secure deletion:", err);
-      } else {
-        console.log("File securely deleted");
-      }
-    });
-    secureDelete(transcriptPath, (err) => {
-      if (err) {
-        console.error("Error during secure deletion:", err);
-      } else {
-        console.log("File securely deleted");
-      }
-    });
+    transporter
+      .sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.error("Error sending email:", error);
+          res.status(500).json({ message: "Internal server error" });
+        } else {
+          console.log("Email sent:", info.response);
+          res.send("POST request to the endpoint");
+        }
+      })
+      .then(() => {
+        secureDelete(cvPath, (err) => {
+          if (err) {
+            console.error("Error during secure deletion:", err);
+          } else {
+            console.log("File securely deleted");
+          }
+        });
+        secureDelete(transcriptPath, (err) => {
+          if (err) {
+            console.error("Error during secure deletion:", err);
+          } else {
+            console.log("File securely deleted");
+          }
+        });
+      });
   },
 );
 
