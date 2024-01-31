@@ -32,9 +32,9 @@ export default function Article(props: any) {
 
   return (
     <BaseLayout>
-      <div class="mx-5 sm:mx-0">
+      <div class="">
         <Show when={article()}>
-          <div class="">
+          <div class="mx-5 md:mx-0">
             <Show
               when={article().releaseDate !== undefined}
               fallback={<p class="italic">Dr. Jürgen Werner</p>}
@@ -45,11 +45,11 @@ export default function Article(props: any) {
             </Show>
             <HeroText text={`${article().title}`} className="mb-10 sm:mb-12" />
           </div>
-          <div class="flex flex-col-reverse gap-10 sm:flex-row sm:gap-20">
-            <p class="max-w-[800px] flex-1 text-left text-lg sm:text-xl">
+          <div class="flex flex-col-reverse gap-10 md:flex-row md:gap-20">
+            <p class="mx-5 max-w-[800px] flex-1 text-left text-lg sm:text-xl md:mx-0">
               {article().content}
             </p>
-            <div class="max-w-screen flex h-auto w-fit flex-col items-center gap-2 sm:w-[500px]">
+            <div class="max-w-screen ml-5 flex h-auto flex-col items-center gap-2 sm:max-w-[500px]">
               <img
                 src={`${CMS_URL}${article().url}`}
                 class="rounded"
