@@ -20,7 +20,7 @@
 
   .primary-button {
     /* @apply border-highlight-dark drop-shadow-solid-dark bg-highlight hover:drop-shadow-solid-dark-lg h-fit w-fit rounded-lg border-2 px-4 py-2 font-bold text-white duration-150 ease-in hover:-translate-x-1 hover:hover:-translate-y-1; */
-    @apply border-highlight-dark drop-shadow-solid-dark bg-highlight hover:drop-shadow-solid-dark-lg h-fit w-fit rounded-lg border-2 px-4 py-2 font-bold text-white duration-150 ease-in hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-[2px] active:translate-y-[2px] active:drop-shadow-none;
+    @apply border-highlight-dark drop-shadow-solid-dark bg-highlight hover:drop-shadow-solid-dark-lg h-fit w-fit rounded-lg border-2 px-4 py-2 font-bold text-white duration-200 ease-in hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:drop-shadow-none;
   }
 
   .default-button {
