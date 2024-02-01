@@ -18,7 +18,7 @@ export default function Header(props: any) {
       : "hover:text-highlight";
   };
   return (
-    <div class={`${props.className} mx-5 flex justify-between lg:mx-0`}>
+    <div class={`${props.className} mtl:mx-0 mx-5 flex justify-between`}>
       <A href="/" class="flex flex-col">
         <h1 class="text-dark-blue text-start text-xl font-semibold md:text-2xl">
           Zahnarztpraxis
