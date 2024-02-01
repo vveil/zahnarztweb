@@ -72,43 +72,45 @@ export default function LandingPage(props: any) {
           </div>
         </BaseWidget>
       </div>
-      <div class="mtl:mx-0 mx-5">
-        <h1 class="mb-3 text-4xl font-bold">Das Team der Praxis</h1>
-        <p class="text-2xl">
-          Wir beraten und behandeln Sie gerne persönlich und
-          <span class="hidden sm:block"> </span>
-          individuell auf Ihre Situation angepasst.
-        </p>
-      </div>
-      <div class="mtl:mx-0 flex w-screen flex-col justify-between gap-10 sm:justify-around md:mx-5 md:w-auto md:flex-row md:flex-wrap lg:justify-between lg:gap-0">
-        <EmployeePreview
-          imgSrc="/images/jwerner.jpg"
-          imgAlt="Bild des Zahnarztes Dr. med. dent. Jürgen Werner"
-          name="Dr. med. dent. Jürgen&nbsp;Werner"
-          job="Zahnarzt"
-        />
-        <EmployeePreview
-          imgSrc="/images/bhillebrecht.jpg"
-          imgAlt="Bild von Beachte Hillebrecht"
-          name="Beate Hillebrecht"
-          job="Rezeption, Prophylaxe"
-        />
-        <EmployeePreview
-          imgSrc="/images/azubi.jpg"
-          imgAlt="Bild von der Auszubildenen"
-          name="Neuer Name"
-          job="AZUBI, Stuhlassistenz, Labor"
-        />
-        <BaseWidget
-          title="Wir suchen Zahnmedizinische Fachangestellte"
-          className="order-first max-h-[18.75rem] sm:order-1 sm:max-w-[18.75rem] md:h-[18.75rem]"
-          childrenDivClasses="flex w-full h-full justify-end items-end"
-        >
-          <PrimaryButton url="/bewerben" className="mb-1">
-            Hier Bewerben
-            <span class="ml-2">→</span>
-          </PrimaryButton>
-        </BaseWidget>
+      <div class="flex flex-col gap-6">
+        <div class="mtl:mx-0 mx-5">
+          <h1 class="mb-3 text-4xl font-bold">Das Team der Praxis</h1>
+          <p class="text-2xl">
+            Wir beraten und behandeln Sie gerne persönlich und
+            <span class="hidden sm:block"> </span>
+            individuell auf Ihre Situation angepasst.
+          </p>
+        </div>
+        <div class="mtl:mx-0 flex w-screen flex-col justify-between gap-10 sm:justify-around md:mx-5 md:w-auto md:flex-row md:flex-wrap lg:justify-between lg:gap-0">
+          <EmployeePreview
+            imgSrc="/images/jwerner.jpg"
+            imgAlt="Bild des Zahnarztes Dr. med. dent. Jürgen Werner"
+            name="Dr. med. dent. Jürgen&nbsp;Werner"
+            job="Zahnarzt"
+          />
+          <EmployeePreview
+            imgSrc="/images/bhillebrecht.jpg"
+            imgAlt="Bild von Beachte Hillebrecht"
+            name="Beate Hillebrecht"
+            job="Rezeption, Prophylaxe"
+          />
+          <EmployeePreview
+            imgSrc="/images/azubi.jpg"
+            imgAlt="Bild von der Auszubildenen"
+            name="Neuer Name"
+            job="AZUBI, Stuhlassistenz, Labor"
+          />
+          <BaseWidget
+            title="Wir suchen Zahnmedizinische Fachangestellte"
+            className="order-first max-h-[18.75rem] sm:order-1 sm:max-w-[18.75rem] md:h-[18.75rem]"
+            childrenDivClasses="flex w-full h-full justify-end items-end"
+          >
+            <PrimaryButton url="/bewerben" className="mb-1">
+              Hier Bewerben
+              <span class="ml-2">→</span>
+            </PrimaryButton>
+          </BaseWidget>
+        </div>
       </div>
     </div>
   );
