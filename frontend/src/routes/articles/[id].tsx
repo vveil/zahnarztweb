@@ -34,7 +34,7 @@ export default function Article(props: any) {
     <BaseLayout>
       <div class="">
         <Show when={article()}>
-          <div class="mx-5 md:mx-0">
+          <div class="mtl:mx-0 mx-5">
             <Show
               when={article().releaseDate !== undefined}
               fallback={<p class="italic">Dr. Jürgen Werner</p>}
@@ -45,14 +45,14 @@ export default function Article(props: any) {
             </Show>
             <HeroText text={`${article().title}`} className="mb-10 sm:mb-12" />
           </div>
-          <div class="flex flex-col-reverse gap-10 md:flex-row md:gap-20">
-            <p class="mx-5 max-w-[800px] flex-1 text-left text-lg sm:text-xl md:mx-0">
+          <div class="flex flex-col-reverse gap-10 md:flex-row md:gap-20 ">
+            <p class="mtl:mx-0 mx-5 max-w-[800px] flex-1 text-left text-lg sm:text-xl ">
               {article().content}
             </p>
-            <div class="max-w-screen ml-5 flex h-auto flex-col items-center gap-2 sm:max-w-[500px]">
+            <div class="max-w-screen mtl:mx-0 flex h-auto flex-col items-center gap-2 md:mx-5 md:max-w-[500px]">
               <img
                 src={`${CMS_URL}${article().url}`}
-                class="rounded"
+                class="w-screen md:rounded"
                 alt={`${article().altImageText}`}
               />
               <p class="">{article().imageCaption}</p>
