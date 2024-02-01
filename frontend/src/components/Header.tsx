@@ -11,7 +11,7 @@ export default function Header(props: any) {
       if (location.pathname == "/bewerben") {
         return "opacity-80";
       }
-      return "hover:opacity-80";
+      return "";
     }
     return path == location.pathname
       ? "text-highlight"

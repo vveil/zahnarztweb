@@ -10,8 +10,8 @@ export default function LandingPage(props: any) {
     <div class={`${props.className} flex flex-col gap-12 lg:gap-24`}>
       {/* <h1 class="text-4xl sm:text-7xl font-bold">Ihr Zahnarzt</h1>
             <h1 class="text-4xl sm:text-7xl font-bold">in&nbsp;Braunschweig</h1> */}
-      <HeroText text={heroText} className="mx-5 lg:mx-0" />
-      <div class="flex flex-col gap-8 sm:mx-5 md:flex-row lg:mx-0">
+      <HeroText text={heroText} className="mtl:mx-0 mx-5" />
+      <div class="mtl:mx-0 flex flex-col gap-8 sm:mx-5 md:flex-row">
         <BaseWidget
           title="Anfahrt"
           className="flex-1"
@@ -72,17 +72,15 @@ export default function LandingPage(props: any) {
           </div>
         </BaseWidget>
       </div>
-      <div>
-        <h1 class="mx-5 mb-3 text-4xl font-bold lg:mx-0">
-          Das Team der Praxis
-        </h1>
-        <p class="mx-5 text-2xl lg:mx-0">
+      <div class="mtl:mx-0 mx-5">
+        <h1 class="mb-3 text-4xl font-bold">Das Team der Praxis</h1>
+        <p class="text-2xl">
           Wir beraten und behandeln Sie gerne persönlich und
           <span class="hidden sm:block"> </span>
           individuell auf Ihre Situation angepasst.
         </p>
       </div>
-      <div class="flex w-screen flex-col justify-between gap-10 sm:justify-around md:w-auto md:flex-row md:flex-wrap lg:justify-between lg:gap-0">
+      <div class="mtl:mx-0 flex w-screen flex-col justify-between gap-10 sm:justify-around md:mx-5 md:w-auto md:flex-row md:flex-wrap lg:justify-between lg:gap-0">
         <EmployeePreview
           imgSrc="/images/jwerner.jpg"
           imgAlt="Bild des Zahnarztes Dr. med. dent. Jürgen Werner"
@@ -103,7 +101,7 @@ export default function LandingPage(props: any) {
         />
         <BaseWidget
           title="Wir suchen Zahnmedizinische Fachangestellte"
-          className="order-first max-h-[18.75rem] sm:order-1 sm:max-w-[18.75rem]"
+          className="order-first max-h-[18.75rem] sm:order-1 sm:max-w-[18.75rem] md:h-[18.75rem]"
           childrenDivClasses="flex w-full h-full justify-end items-end"
         >
           <PrimaryButton url="/bewerben" className="mb-1">

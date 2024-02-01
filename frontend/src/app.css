@@ -3,26 +3,27 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Source Sans 3";
-    src: url("/fonts/source_sans_3/SourceSans3-VariableFont_wght.ttf");
+  font-family: "Source Sans 3";
+  src: url("/fonts/source_sans_3/SourceSans3-VariableFont_wght.ttf");
 }
 
 @layer base {
-    :root {
-        background-color: #ebf3f6;
-    }
+  :root {
+    background-color: #ebf3f6;
+  }
 }
 
 @layer components {
-    .default-width {
-        @apply mx-8 lg:mx-32;
-    }
+  .default-width {
+    @apply mx-8 lg:mx-32;
+  }
 
-    .primary-button {
-        @apply border-highlight-dark drop-shadow-solid-dark bg-highlight h-fit w-fit rounded-lg border-2 px-4 py-2 font-bold text-white;
-    }
+  .primary-button {
+    /* @apply border-highlight-dark drop-shadow-solid-dark bg-highlight hover:drop-shadow-solid-dark-lg h-fit w-fit rounded-lg border-2 px-4 py-2 font-bold text-white duration-150 ease-in hover:-translate-x-1 hover:hover:-translate-y-1; */
+    @apply border-highlight-dark drop-shadow-solid-dark bg-highlight hover:drop-shadow-solid-dark-lg h-fit w-fit rounded-lg border-2 px-4 py-2 font-bold text-white duration-150 ease-in hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-[2px] active:translate-y-[2px] active:drop-shadow-none;
+  }
 
-    .default-button {
-        @apply border-highlight text-highlight drop-shadow-solid bg-dark-teal w-fit rounded-lg border-2 px-3 py-2 font-bold;
-    }
+  .default-button {
+    @apply border-highlight text-highlight drop-shadow-solid bg-dark-teal w-fit rounded-lg border-2 px-3 py-2 font-bold;
+  }
 }
