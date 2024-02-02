@@ -9,7 +9,7 @@ export default function Dokumente(props: any) {
     <BaseLayout>
       <div>
         <HeroText text="Dokumente" className="mtl:mx-0 mx-5 mb-12" />
-        <div class="mtl:mx-0 flex flex-col gap-8 md:mx-5 md:flex-row">
+        <div class="mtl:mx-0 flex flex-col gap-8 md:mx-5 md:flex-row md:flex-wrap">
           <BaseWidget
             title="Anamnesebogen"
             className="md:w-fit lg:min-w-[412px]"
@@ -17,6 +17,7 @@ export default function Dokumente(props: any) {
             <div class="flex gap-4">
               <A
                 href="/documents/anamnesebogen.pdf"
+                target="_blank"
                 class="default-button hidden flex-1 justify-center drop-shadow-none sm:flex"
               >
                 Bearbeiten<span class="ml-2">🔗</span>
