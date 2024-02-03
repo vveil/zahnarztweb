@@ -22,7 +22,10 @@ export default function LandingPage(props: any) {
               <p>Weststraße 70,</p>
               <p>38126 Braunschweig</p>
             </div>
-            <DefaultButton url="https://www.google.com/maps/search/?api=1&query=dr+werner+zahnarzt+rautheim">
+            <DefaultButton
+              className="hover:drop-shadow-solid-lg duration-200 ease-in hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:drop-shadow-none"
+              url="https://www.google.com/maps/search/?api=1&query=dr+werner+zahnarzt+rautheim"
+            >
               <span>Auf Google Maps ansehen</span>
               <span class="ml-2">→</span>
             </DefaultButton>

@@ -31,6 +31,7 @@ module.exports = {
       },
       dropShadow: {
         solid: "4px 4px 0px rgba(60, 137, 128, 1)",
+        "solid-lg": "6px 6px 0px rgba(60, 137, 128, 1)",
         "solid-dark": "4px 4px 0px rgba(21, 74, 95, 1)",
         "solid-dark-lg": "6px 6px 0px rgba(21, 74, 95, 1)",
         "solid-light": "1px 2px 0px rgba(217, 232, 234, 1)",
