@@ -7,12 +7,12 @@ import BaseLayout from "~/layouts/BaseLayout";
 export default function Application() {
   return (
     <BaseLayout className="">
-      <HeroText text="Bewirb dich" className="mx-5 mb-6 sm:mx-0 sm:mb-12" />
-      <p class="mx-5 mb-12 text-xl sm:mx-0 sm:text-2xl lg:w-1/2">
+      <HeroText text="Bewirb dich" className="mtl:mx-0 mx-5 mb-6 sm:mb-12" />
+      <p class="mtl:mx-0 mx-5 mb-12 text-xl sm:text-2xl md:w-1/2">
         Starte deine Karriere als zahnmedizinische Fachangestellte bei uns –
         egal, ob Ausbildungsbeginn, Praxiswechsel oder Festanstellung!
       </p>
-      <ApplicationForm className="lg:w-1/2" />
+      <ApplicationForm className="md:w-1/2" />
     </BaseLayout>
   );
 }

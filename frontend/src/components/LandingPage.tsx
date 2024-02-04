@@ -11,7 +11,7 @@ export default function LandingPage(props: any) {
       {/* <h1 class="text-4xl sm:text-7xl font-bold">Ihr Zahnarzt</h1>
             <h1 class="text-4xl sm:text-7xl font-bold">in&nbsp;Braunschweig</h1> */}
       <HeroText text={heroText} className="mtl:mx-0 mx-5" />
-      <div class="mtl:mx-0 flex flex-col gap-8 sm:mx-5 md:flex-row">
+      <div class="mtl:mx-0 flex flex-col gap-8 md:mx-5 md:flex-row">
         <BaseWidget
           title="Anfahrt"
           className="flex-1"

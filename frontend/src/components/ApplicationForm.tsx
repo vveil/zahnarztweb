@@ -3,7 +3,7 @@ import { A } from "@solidjs/router";
 import axios from "axios";
 
 export default function ApplicationForm(props: any) {
-  const [selected, setSelected] = createSignal("AZUBI ZMFA");
+  const [selected, setSelected] = createSignal("AZUBI ZFA");
   const [name, setName] = createSignal("");
   const [surname, setSurname] = createSignal("");
   const [email, setEmail] = createSignal("");
@@ -48,16 +48,16 @@ export default function ApplicationForm(props: any) {
   };
 
   const options = {
-    azZMFA: "AZUBI ZMFA",
+    azZFA: "AZUBI ZFA",
     azPraxisWechsler: "AZUBI Praxiswechsler",
-    ZMFA: "ZMFA",
+    ZFA: "ZFA",
   };
 
   return (
     <div class={`${props.className}`}>
       <form
         onSubmit={handleSubmit}
-        class="mx-5 flex flex-col gap-2 sm:mx-0 sm:gap-4"
+        class="mtl:mx-0 mx-5 flex flex-col gap-2 sm:gap-4"
       >
         <div class="form-control flex flex-1 flex-col gap-1 sm:gap-2">
           <label for="art">
@@ -76,7 +76,7 @@ export default function ApplicationForm(props: any) {
             </For>
           </select>
         </div>
-        <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
+        <div class="mtl:flex-row flex flex-col gap-2 sm:gap-4">
           <div class="form-control flex flex-1 flex-col gap-1 sm:gap-2">
             <label for="surname">
               Vorname&thinsp;
@@ -120,7 +120,7 @@ export default function ApplicationForm(props: any) {
             required
           />
         </div>
-        <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
+        <div class="mtl:flex-row flex flex-col gap-2 sm:gap-4">
           <div class="form-control flex flex-col gap-1 sm:flex-1 sm:gap-2">
             <label for="cv">
               Lebenslauf&thinsp;
