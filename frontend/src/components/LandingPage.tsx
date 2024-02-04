@@ -105,7 +105,7 @@ export default function LandingPage(props: any) {
           />
           <BaseWidget
             title="Wir suchen Zahnmedizinische Fachangestellte"
-            className="order-first max-h-[18.75rem] sm:order-1 sm:max-w-[18.75rem] md:h-[18.75rem]"
+            className="order-first max-h-[18.75rem] md:order-1 md:h-[18.75rem] md:max-w-[18.75rem]"
             childrenDivClasses="flex w-full h-full justify-end items-end"
           >
             <PrimaryButton url="/bewerben" className="mb-1">
