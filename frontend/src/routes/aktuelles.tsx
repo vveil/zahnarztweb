@@ -49,22 +49,24 @@ export default function Aktuelles() {
               <A
                 class="text-highlight text-lg hover:underline"
                 href="https://www.kzvn.de/"
+                target="_blank"
               >
                 Kassenzahnärztliche Vereinigung Niedersachsen
               </A>
               <A
                 class="text-highlight text-lg hover:underline"
                 href="https://www.dgzs.de/"
+                target="_blank"
               >
                 Deutsche Gesellschaft Zahnärztliche Schlafmedizin
               </A>
               <A
                 class="text-highlight text-lg hover:underline"
                 href="https://share.rheinklang.de/player?link=64fb34a7cd3d7"
+                target="_blank"
               >
                 "Zähne zeigen" eine Kampagne der Zahnärzteschaft
               </A>
-              {/* <A href="">Alles viel zu teuer - Flyer der KZVN</A> */}
             </div>
           </BaseWidget>
         </div>
