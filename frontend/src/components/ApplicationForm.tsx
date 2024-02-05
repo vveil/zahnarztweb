@@ -7,7 +7,7 @@ export default function ApplicationForm(props: any) {
   const [name, setName] = createSignal("");
   const [surname, setSurname] = createSignal("");
   const [email, setEmail] = createSignal("");
-  const [datenConsent, setDatenConsent] = createSignal(false);
+  const [datenConsent, setDatenConsent] = createSignal("");
   const [cv, setCv] = createSignal<File | null>(null);
   const [transcript, setTranscript] = createSignal<File | null>(null);
 
@@ -20,7 +20,7 @@ export default function ApplicationForm(props: any) {
     dataToSubmit.append("name", name());
     dataToSubmit.append("surname", surname());
     dataToSubmit.append("email", email());
-    dataToSubmit.append("datenConstent", datenConsent().toString());
+    dataToSubmit.append("datenConstent", datenConsent());
 
     if (cv()) {
       dataToSubmit.append("cv", cv() as Blob);
@@ -79,22 +79,8 @@ export default function ApplicationForm(props: any) {
         </div>
         <div class="mtl:flex-row flex flex-col gap-2 sm:gap-4">
           <div class="form-control flex flex-1 flex-col gap-1 sm:gap-2">
-            <label for="surname">
-              Vorname&thinsp;
-              <span class="text-red-600">*</span>
-            </label>
-            <input
-              class="p-1"
-              type="text"
-              id="surname"
-              value={surname()}
-              onChange={(e) => setSurname(e.currentTarget.value)}
-              required
-            />
-          </div>
-          <div class="form-control flex flex-1 flex-col gap-1 sm:gap-2">
             <label class="" for="name">
-              Name&thinsp;
+              Vorname&thinsp;
               <span class="text-red-600">*</span>
             </label>
             <input
@@ -103,6 +89,20 @@ export default function ApplicationForm(props: any) {
               id="name"
               value={name()}
               onChange={(e) => setName(e.currentTarget.value)}
+              required
+            />
+          </div>
+          <div class="form-control flex flex-1 flex-col gap-1 sm:gap-2">
+            <label for="surname">
+              Name&thinsp;
+              <span class="text-red-600">*</span>
+            </label>
+            <input
+              class="p-1"
+              type="text"
+              id="surname"
+              value={surname()}
+              onChange={(e) => setSurname(e.currentTarget.value)}
               required
             />
           </div>
@@ -154,8 +154,10 @@ export default function ApplicationForm(props: any) {
             class="mt-1 p-1"
             type="checkbox"
             id="datens"
-            checked={datenConsent()}
-            onChange={(e) => setDatenConsent(e.currentTarget.checked)}
+            checked={false}
+            onChange={(e) => {
+              setDatenConsent(e.currentTarget.checked.toString());
+            }}
             required
           />
           <label for="datens">
