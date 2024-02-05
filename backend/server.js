@@ -86,6 +86,7 @@ app.post(
     const surname = req.body.surname;
     const email = req.body.email;
     const stelle = req.body.stelle;
+    const datenConsent = req.body.datenConsent;
 
     // Access file properties
     const cvOriginalName = cvFile.originalname;
@@ -103,6 +104,7 @@ app.post(
         <p>Nachname: ${surname}</p>
         <p>Email: ${email}</p>
         <p>Stelle: ${stelle}</p>
+        <p>${name} ${surname} stimmt der Verarbeitung der Daten im Sinne des Bewerbungsprozesses zu: ${datenConsent}</p>
       `,
       attachments: [
         { filename: cvOriginalName, path: cvPath },

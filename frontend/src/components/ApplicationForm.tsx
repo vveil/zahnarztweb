@@ -20,6 +20,7 @@ export default function ApplicationForm(props: any) {
     dataToSubmit.append("name", name());
     dataToSubmit.append("surname", surname());
     dataToSubmit.append("email", email());
+    dataToSubmit.append("datenConstent", datenConsent().toString());
 
     if (cv()) {
       dataToSubmit.append("cv", cv() as Blob);
