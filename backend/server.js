@@ -98,7 +98,7 @@ app.post(
     const mailOptions = {
       from: "janniklas999777@gmail.com", // Replace with your Gmail email address
       to: "spam@niklas.ai", // Replace with the recipient's email address
-      subject: "New Job Application",
+      subject: "[Wichtig] Neue Bewerbung eingegangen!",
       html: `
         <p>Name: ${name}</p>
         <p>Nachname: ${surname}</p>

@@ -1,4 +1,4 @@
-import { Component, For, createEffect, createSignal } from "solid-js";
+import { Component, For, Show, createEffect, createSignal } from "solid-js";
 import { A } from "@solidjs/router";
 import axios from "axios";
 
@@ -11,10 +11,20 @@ export default function ApplicationForm(props: any) {
   const [cv, setCv] = createSignal<File | null>(null);
   const [transcript, setTranscript] = createSignal<File | null>(null);
 
+  const [isValidEmail, setIsValidEmail] = createSignal(true); // Default to true, adjust based on your needs
+
+  const emailRegex =
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
   const handleSubmit = async (event: Event) => {
     event.preventDefault();
 
-    console.log("inside handleSubmit");
+    const isEmailValid = emailRegex.test(email());
+    setIsValidEmail(isEmailValid);
+    if (!isValidEmail()) {
+      return;
+    }
+
     const dataToSubmit = new FormData();
     dataToSubmit.append("stelle", selected());
     dataToSubmit.append("name", name());
@@ -35,6 +45,14 @@ export default function ApplicationForm(props: any) {
         "https://zahnarzt.niklas.ai/api/application",
         dataToSubmit,
       );
+      setSelected("AZUBI ZFA");
+      setName("");
+      setSurname("");
+      setEmail("");
+      setDatenConsent("");
+      setCv(null);
+      setTranscript(null);
+      setIsValidEmail(true);
     } catch (error) {
       console.error("Error uploading files:", error);
     }
@@ -110,10 +128,15 @@ export default function ApplicationForm(props: any) {
         <div class="form-control flex flex-col gap-1 sm:gap-2">
           <label for="email">
             E-Mail&thinsp;
-            <span class="text-red-600">*</span>
+            <span class="text-red-600">* </span>
+            <Show when={!isValidEmail()}>
+              <span class="text-red-600">
+                Bitte eine gültige E-Mail Adresse angeben
+              </span>
+            </Show>
           </label>
           <input
-            class="p-1"
+            class={`p-1 ${!isValidEmail() ? "rounded border-2 border-red-600" : ""}`}
             type="text"
             id="email"
             value={email()}
@@ -124,26 +147,28 @@ export default function ApplicationForm(props: any) {
         <div class="mtl:flex-row flex flex-col gap-2 sm:gap-4">
           <div class="form-control flex flex-col gap-1 sm:flex-1 sm:gap-2">
             <label for="cv">
-              Lebenslauf&thinsp;
+              Lebenslauf (.pdf)&thinsp;
               <span class="text-red-600">*</span>
             </label>
             <input
               class="p-1"
               type="file"
               id="cv"
+              accept=".pdf"
               onChange={(e) => handleFileChange(e, setCv)}
               required
             />
           </div>
           <div class="form-control flex flex-col gap-1 sm:flex-1 sm:gap-2">
             <label for="transcript">
-              Zeugnis&thinsp;
+              Zeugnis (.pdf)&thinsp;
               <span class="text-red-600">*</span>
             </label>
             <input
               class="p-1"
               type="file"
               id="transcript"
+              accept=".pdf"
               onChange={(e) => handleFileChange(e, setTranscript)}
               required
             />
