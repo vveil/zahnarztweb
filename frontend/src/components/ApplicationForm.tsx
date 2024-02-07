@@ -11,7 +11,7 @@ export default function ApplicationForm(props: any) {
   const [cv, setCv] = createSignal<File | null>(null);
   const [transcript, setTranscript] = createSignal<File | null>(null);
 
-  const [isValidEmail, setIsValidEmail] = createSignal(true); // Default to true, adjust based on your needs
+  const [isValidEmail, setIsValidEmail] = createSignal(true);
 
   const emailRegex =
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -53,6 +53,7 @@ export default function ApplicationForm(props: any) {
       setCv(null);
       setTranscript(null);
       setIsValidEmail(true);
+      props.onSubmit();
     } catch (error) {
       console.error("Error uploading files:", error);
     }

@@ -1,10 +1,17 @@
-import { A } from "@solidjs/router";
+import { Show, createSignal } from "solid-js";
 import ApplicationForm from "~/components/ApplicationForm";
-import ApplicationInfos from "~/components/ApplicationInfos";
 import HeroText from "~/components/HeroText";
+import PrimaryButton from "~/components/PrimaryButton";
 import BaseLayout from "~/layouts/BaseLayout";
 
 export default function Application() {
+  const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] =
+    createSignal(false);
+
+  const handleSuccess = () => {
+    setIsSubmittedSuccessfully(true);
+  };
+
   return (
     <BaseLayout className="">
       <HeroText text="Bewirb dich" className="mtl:mx-0 mx-5 mb-6 sm:mb-12" />
@@ -12,7 +19,21 @@ export default function Application() {
         Starte deine Karriere als zahnmedizinische Fachangestellte bei uns –
         egal, ob Ausbildungsbeginn, Praxiswechsel oder Festanstellung!
       </p>
-      <ApplicationForm className="md:w-1/2" />
+      <Show
+        when={!isSubmittedSuccessfully()}
+        fallback={
+          <div class="mtl:mx-0 mx-5 mb-12 md:w-1/2">
+            <p class="mb-6 text-xl  text-green-600 sm:text-2xl">
+              Du hast dich erfolgreich beworben!
+            </p>
+            <PrimaryButton className="" url="/">
+              Zur Startseite
+            </PrimaryButton>
+          </div>
+        }
+      >
+        <ApplicationForm className="md:w-1/2" onSubmit={handleSuccess} />
+      </Show>
     </BaseLayout>
   );
 }
