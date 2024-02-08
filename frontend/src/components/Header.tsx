@@ -14,7 +14,7 @@ export default function Header(props: any) {
       return "";
     }
     return path == location.pathname
-      ? "md:text-highlight md:opacity-100 opacity-70"
+      ? "md:text-highlight md:opacity-100 opacity-70 underline"
       : "hover:opacity-80 md:hover:text-highlight";
   };
   return (
