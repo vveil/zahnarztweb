@@ -1,5 +1,4 @@
 import { Component, For, Show, createEffect, createSignal } from "solid-js";
-import { A } from "@solidjs/router";
 import axios from "axios";
 
 export default function ApplicationForm(props: any) {

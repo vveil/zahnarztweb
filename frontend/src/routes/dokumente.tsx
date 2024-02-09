@@ -1,5 +1,4 @@
 import { A } from "@solidjs/router";
-import { Show, createSignal } from "solid-js";
 import BaseWidget from "~/components/BaseWidget";
 import HeroText from "~/components/HeroText";
 import BaseLayout from "~/layouts/BaseLayout";

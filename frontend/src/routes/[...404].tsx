@@ -1,4 +1,3 @@
-// import { A } from "@solidjs/router";
 import DefaultButton from "~/components/DefaultButton";
 import HeroText from "~/components/HeroText";
 import BaseLayout from "~/layouts/BaseLayout";

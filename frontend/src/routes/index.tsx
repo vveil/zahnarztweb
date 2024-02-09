@@ -1,4 +1,3 @@
-import { A } from "@solidjs/router";
 import LandingPage from "~/components/LandingPage";
 import BaseLayout from "~/layouts/BaseLayout";
 
