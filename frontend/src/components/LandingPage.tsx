@@ -84,7 +84,7 @@ export default function LandingPage(props: any) {
             individuell auf Ihre Situation angepasst.
           </p>
         </div>
-        <div class="mtl:mx-0 flex w-screen flex-col justify-between gap-10 sm:justify-around md:mx-5 md:w-auto md:flex-row md:flex-wrap lg:justify-between lg:gap-0">
+        <div class="mtl:mx-0 mtl:justify-between mtl:flex-nowrap flex w-screen flex-col flex-nowrap justify-between gap-10 md:mx-5 md:w-auto md:flex-row md:flex-wrap lg:flex-wrap lg:gap-0">
           <EmployeePreview
             imgSrc="/images/jwerner.jpg"
             imgAlt="Bild des Zahnarztes Dr. med. dent. Jürgen Werner"
