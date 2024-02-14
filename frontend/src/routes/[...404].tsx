@@ -1,10 +1,9 @@
 import DefaultButton from "~/components/DefaultButton";
 import HeroText from "~/components/HeroText";
-import BaseLayout from "~/layouts/BaseLayout";
 
 export default function NotFound() {
   return (
-    <BaseLayout>
+    <div>
       <HeroText
         text="Ups, das konnte nicht gefunden werden."
         className="mx-5 mb-6  sm:mx-0 "
@@ -12,6 +11,6 @@ export default function NotFound() {
       <DefaultButton url="/" className="mx-5 sm:mx-0">
         Zurück zur Startseite
       </DefaultButton>
-    </BaseLayout>
+    </div>
   );
 }

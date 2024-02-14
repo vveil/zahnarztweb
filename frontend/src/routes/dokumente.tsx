@@ -1,11 +1,10 @@
 import { A } from "@solidjs/router";
 import BaseWidget from "~/components/BaseWidget";
 import HeroText from "~/components/HeroText";
-import BaseLayout from "~/layouts/BaseLayout";
 
 export default function Dokumente(props: any) {
   return (
-    <BaseLayout>
+    <div>
       <div>
         <HeroText text="Dokumente" className="mtl:mx-0 mx-5 mb-12" />
         <div class="mtl:mx-0 flex flex-col gap-8 md:mx-5 md:flex-row md:flex-wrap">
@@ -67,6 +66,6 @@ export default function Dokumente(props: any) {
           </BaseWidget>
         </div>
       </div>
-    </BaseLayout>
+    </div>
   );
 }

@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "@solidjs/router";
 import { Show, createResource } from "solid-js";
 import HeroText from "~/components/HeroText";
-import BaseLayout from "~/layouts/BaseLayout";
 
 function serializeDate(dateString: string): string {
   const date = new Date(dateString);
@@ -31,7 +30,7 @@ export default function Article(props: any) {
   }
 
   return (
-    <BaseLayout>
+    <div>
       <div class="">
         <Show when={article()}>
           <div class="mtl:mx-0 mx-5">
@@ -60,6 +59,6 @@ export default function Article(props: any) {
           </div>
         </Show>
       </div>
-    </BaseLayout>
+    </div>
   );
 }
