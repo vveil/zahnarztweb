@@ -8,6 +8,7 @@ export default function Footer(props: any) {
       {/* <A href="/links">Links</A> */}
       {/* <A href="/contact">Kontakt</A> */}
       <A href="/impressum">Impressum</A>
+      <A href="/datenschutz">Datenschutz</A>
     </div>
   );
 }
