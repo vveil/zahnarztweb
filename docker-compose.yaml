@@ -4,12 +4,12 @@ services:
   solidjs-frontend:
     image: ghcr.io/vveil/zahnarztweb.frontend:latest
 
-  node-backend:
-    image: ghcr.io/vveil/zahnarztweb.backend:latest
-    env_file:
-      - ./backend/.env
-    volumes:
-      - ./backend/uploads:/usr/src/app/uploads
+  # node-backend:
+  #   image: ghcr.io/vveil/zahnarztweb.backend:latest
+  #   env_file:
+  #     - ./backend/.env
+  #   volumes:
+  #     - ./backend/uploads:/usr/src/app/uploads
 
 networks:
   default:

@@ -31,7 +31,7 @@ export default function LandingPage(props: any) {
             </DefaultButton>
           </div>
         </BaseWidget>
-        <BaseWidget title="Öffnungszeiten" className="flex-1">
+        <BaseWidget title="&Ouml;ffnungszeiten" className="flex-1">
           <div class="flex gap-8">
             <div class="flex flex-col gap-3 font-semibold">
               <p>Montag</p>
@@ -79,7 +79,7 @@ export default function LandingPage(props: any) {
         <div class="mtl:mx-0 mx-5">
           <h1 class="mb-3 text-4xl font-bold">Das Team der Praxis</h1>
           <p class="text-2xl">
-            Wir beraten und behandeln Sie gerne persönlich und
+            Wir beraten und behandeln Sie gerne pers&ouml;nlich und
             <span class="hidden sm:block"> </span>
             individuell auf Ihre Situation angepasst.
           </p>
@@ -87,8 +87,8 @@ export default function LandingPage(props: any) {
         <div class="mtl:mx-0 mtl:justify-between mtl:flex-nowrap flex w-screen flex-col flex-nowrap justify-between gap-10 md:mx-5 md:w-auto md:flex-row md:flex-wrap lg:flex-wrap lg:gap-0">
           <EmployeePreview
             imgSrc="/images/jwerner.jpg"
-            imgAlt="Bild des Zahnarztes Dr. med. dent. Jürgen Werner"
-            name="Dr. med. dent. Jürgen&nbsp;Werner"
+            imgAlt="Bild des Zahnarztes Dr. med. dent. J&uuml;rgen Werner"
+            name="Dr. med. dent. J&uuml;rgen&nbsp;Werner"
             job="Zahnarzt"
           />
           <EmployeePreview
@@ -100,7 +100,7 @@ export default function LandingPage(props: any) {
           <EmployeePreview
             imgSrc="/images/azubi.jpg"
             imgAlt="Bild von der Auszubildenen"
-            name="Neuer Name"
+            name="Cagla Varisli"
             job="AZUBI, Stuhlassistenz, Labor"
           />
           <BaseWidget

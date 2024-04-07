@@ -9,7 +9,7 @@ export default function NotFound() {
         className="mx-5 mb-6  sm:mx-0 "
       />
       <DefaultButton url="/" className="mx-5 sm:mx-0">
-        Zurück zur Startseite
+        Zur&uuml;ck zur Startseite
       </DefaultButton>
     </div>
   );

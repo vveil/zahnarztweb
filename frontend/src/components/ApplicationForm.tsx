@@ -131,7 +131,7 @@ export default function ApplicationForm(props: any) {
             <span class="text-red-600">* </span>
             <Show when={!isValidEmail()}>
               <span class="text-red-600">
-                Bitte eine gültige E-Mail Adresse angeben
+                Bitte eine g&uuml;ltige E-Mail Adresse angeben
               </span>
             </Show>
           </label>

@@ -40,7 +40,7 @@ export default function Aktuelles() {
           </div>
         </Show>
         <BaseWidget
-          title="Weiterführende Links"
+          title="Weiterf&uuml;hrende Links"
           className="mtl:mx-0 flex h-fit px-5 md:mx-5 md:w-fit md:p-7"
         >
           <div class="flex flex-col gap-1">
@@ -49,21 +49,21 @@ export default function Aktuelles() {
               href="https://www.kzvn.de/"
               target="_blank"
             >
-              Kassenzahnärztliche Vereinigung Niedersachsen
+              Kassenzahn&auml;rztliche Vereinigung Niedersachsen
             </A>
             <A
               class="text-highlight text-lg hover:underline"
               href="https://www.dgzs.de/"
               target="_blank"
             >
-              Deutsche Gesellschaft Zahnärztliche Schlafmedizin
+              Deutsche Gesellschaft Zahn&auml;rztliche Schlafmedizin
             </A>
             <A
               class="text-highlight text-lg hover:underline"
               href="https://share.rheinklang.de/player?link=64fb34a7cd3d7"
               target="_blank"
             >
-              "Zähne zeigen" eine Kampagne der Zahnärzteschaft
+              "Z&auml;hne zeigen" eine Kampagne der Zahn&auml;rzteschaft
             </A>
           </div>
         </BaseWidget>

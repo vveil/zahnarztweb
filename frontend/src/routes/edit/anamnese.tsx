@@ -5,7 +5,7 @@ export default function Anamnese() {
   return (
     <div>
       <A class="default-button mb-2" href="/dokumente">
-        ← Zurück
+        ← Zur&uuml;ck
       </A>
       <iframe src={anamneseFile} class="mt-5 h-[62.5rem] w-full"></iframe>
     </div>

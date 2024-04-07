@@ -23,7 +23,7 @@ export default function Header(props: any) {
           Zahnarztpraxis
         </h1>
         <h1 class="text-start text-xl font-semibold opacity-40 md:text-2xl">
-          Dr. med. dent. Jürgen&nbsp;Werner
+          Dr. med. dent. J&uuml;rgen&nbsp;Werner
         </h1>
       </A>
       <div class="hidden items-center gap-8 text-lg md:flex">
@@ -58,7 +58,7 @@ export default function Header(props: any) {
                   Zahnarztpraxis
                 </h1>
                 <h1 class="text-start text-xl font-semibold text-[#8AB2BF] md:text-2xl">
-                  Dr. med. dent. Jürgen&nbsp;Werner
+                  Dr. med. dent. J&uuml;rgen&nbsp;Werner
                 </h1>
               </A>
               <div

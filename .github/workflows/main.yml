@@ -35,13 +35,13 @@ jobs:
           push: true
           tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.frontend:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.frontend:latest
 
-      - uses: docker/build-push-action@v5.1.0
-        name: Build and push backend image
-        with:
-          context: ./backend
-          file: ./backend/Dockerfile
-          push: true
-          tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:latest
+      # - uses: docker/build-push-action@v5.1.0
+      #   name: Build and push backend image
+      #   with:
+      #     context: ./backend
+      #     file: ./backend/Dockerfile
+      #     push: true
+      #     tags: ${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:${{ github.sha }},${{ env.REGISTRY }}/${{env.ORG_NAME}}/${{ env.IMAGE_BASENAME }}.backend:latest
 
       # - uses: docker/build-push-action@v5.1.0
       #   name: Build and push cms image

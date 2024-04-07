@@ -36,10 +36,10 @@ export default function Article(props: any) {
           <div class="mtl:mx-0 mx-5">
             <Show
               when={article().releaseDate !== undefined}
-              fallback={<p class="italic">Dr. Jürgen Werner</p>}
+              fallback={<p class="italic">Dr. J&uuml;rgen Werner</p>}
             >
               <p class="italic">
-                {serializeDate(article().releaseDate)}, Dr. Jürgen Werner
+                {serializeDate(article().releaseDate)}, Dr. J&uuml;rgen Werner
               </p>
             </Show>
             <HeroText text={`${article().title}`} className="mb-10 sm:mb-12" />

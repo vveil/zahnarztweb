@@ -22,7 +22,7 @@ export default function Dokumente(props: any) {
               </A>
               <A
                 href="/documents/anamnesebogen.cdr"
-                download="AnamnesebogenDrJürgenWerner.pdf"
+                download="AnamnesebogenDrJ&uuml;rgenWerner.pdf"
                 class="primary-button flex-1 text-center"
               >
                 Herunterladen
@@ -57,7 +57,7 @@ export default function Dokumente(props: any) {
               </A>
               <A
                 href="/documents/allesvielzuteuer.pdf"
-                download="AnamnesebogenDrJürgenWerner.pdf"
+                download="AnamnesebogenDrJ&uuml;rgenWerner.pdf"
                 class="primary-button flex-1 text-center"
               >
                 Herunterladen
