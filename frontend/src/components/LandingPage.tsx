@@ -79,8 +79,7 @@ export default function LandingPage(props: any) {
         <div class="mtl:mx-0 mx-5">
           <h1 class="mb-3 text-4xl font-bold">Das Team der Praxis</h1>
           <p class="text-2xl">
-            Wir beraten und behandeln Sie gerne pers&ouml;nlich und
-            <span class="hidden sm:block"> </span>
+            Wir beraten und behandeln Sie gerne pers&ouml;nlich <br class="hidden md:block" />und
             individuell auf Ihre Situation angepasst.
           </p>
         </div>
@@ -115,6 +114,6 @@ export default function LandingPage(props: any) {
           </BaseWidget>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
