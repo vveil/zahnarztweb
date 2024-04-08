@@ -65,7 +65,7 @@ export default function LandingPage(props: any) {
         >
           <div class="mb-6 flex flex-col gap-1">
             <p class="font-semibold">Telefon</p>
-            <p>0531&thinsp;/&thinsp;6802931</p>
+            <p>0531&thinsp;/&thinsp;6802929</p>
           </div>
           <div class="flex flex-col gap-1">
             <p class="font-semibold">E-Mail</p>
