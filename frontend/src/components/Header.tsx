@@ -30,7 +30,12 @@ export default function Header(props: any) {
         <A class={`${active("/aktuelles")} `} href="/aktuelles">
           Aktuelles
         </A>
-        {/* <A class={`${active("/service")} `} href="/service">Behandlungsspektrum</A> */}
+        <A
+          class={`${active("/services")}`}
+          href="/services"
+        >
+          Behandlungsspektrum
+        </A>
         <A class={`${active("/dokumente")} `} href="/dokumente">
           Dokumente
         </A>
@@ -82,7 +87,13 @@ export default function Header(props: any) {
             >
               Aktuelles
             </A>
-            {/* <A class={`${active("/service")} `} href="/service">Behandlungsspektrum</A> */}
+            <A
+              class={`${active("/services")} border-dark-teal-light border-b-2 w-full py-5 text-center`}
+              href="/services"
+              onClick={() => setIsOpen(false)}
+            >
+              Behandlungsspektrum
+            </A>
             <A
               class={`${active("/dokumente")}  w-full py-5 text-center`}
               href="/dokumente"
