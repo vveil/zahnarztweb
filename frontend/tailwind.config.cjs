@@ -21,6 +21,7 @@ module.exports = {
         "dark-blue": "#0D2E3A",
         "light-teal": "#EBF3F6",
         "dark-teal": "#DCE7EA",
+        "darker-teal": "rgba(186, 198, 202, 1)",
         "dark-teal-light": "rgba(217, 232, 234, 0.5)",
         highlight: "#3B7C95",
         "highlight-dark": "#154A5F",
