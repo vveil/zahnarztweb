@@ -22,9 +22,7 @@ export default function ExpandWidget(props: any) {
     }
     const url = `/${props.title.toLowerCase()}`
     return (
-        <div class={`w-full flex flex-grow justify-between gap-5 rounded p-5 sm:p-7 pt-6 ${props.bgColor} ${props.className} ${isHovered() ? 'bg-darker-teal' : ''} transition-colors duration-250`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+        <div class={`w-full flex flex-grow justify-between gap-5 rounded p-5 sm:p-7 pt-6 ${props.bgColor} ${props.className}`}
         >
             <div class="flex-grow flex-col">
                 <h2 class="text-2xl font-bold mb-4">{props.title}</h2>
@@ -41,4 +39,7 @@ export default function ExpandWidget(props: any) {
 {/*
             <A class={``} href={`/${props.title.toLowerCase()}`}>
             </A>
+            ${isHovered() ? 'bg-darker-teal' : ''} transition-colors duration-250`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
 */}

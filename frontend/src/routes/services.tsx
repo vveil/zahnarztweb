@@ -1,6 +1,7 @@
 import BaseWidget from "~/components/BaseWidget";
 import ExpandWidget from "~/components/ExpandWidget";
 import HeroText from "~/components/HeroText";
+import { A } from "@solidjs/router";
 
 export default function Services(props: any) {
   let splitVersion = `Behandlungs-spektrum`
@@ -68,7 +69,7 @@ export default function Services(props: any) {
             className="md:w-fit lg:min-w-[412px]"
           >
             <div class="max-w-[900px]">
-              Wir bieten Ihnen qualitativ höchstwertigen Zahnersatz. Dies beinhaltet nicht nur die perfekte Arbeit in der Praxis sondern ebenso die perfekte zahntechnische Anfertigung im Labor.
+              Wir bieten Ihnen qualitativ höchstwertigen Zahnersatz. Dies beinhaltet nicht nur die perfekte Arbeit in der Praxis sondern ebenso die perfekte zahntechnische Anfertigung im Labor. Daher arbeiten wir mit dem lange etablierten deutschen Meisterlabor <A href="https://techno-dent.de" class="text-highlight">technoDENT</A> zusammen.
             </div>
           </ExpandWidget>
 
