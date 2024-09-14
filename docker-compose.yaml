@@ -7,7 +7,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.zahnarztweb.rule=Host(`dr-werner-zahnarzt.de`)"
       - "traefik.http.services.zahnarztweb.loadbalancer.server.port=3000"
-      - "traefik.http.routers.zahnarztweb.entrypoint=websecure"
+      - "traefik.http.routers.zahnarztweb.entrypoints=websecure"
       - "traefik.http.routers.zahnarztweb.tls.certresolver=myresolver"
     deploy:
       mode: replicated
