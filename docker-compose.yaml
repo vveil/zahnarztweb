@@ -4,9 +4,16 @@ services:
   zahnarztweb:
     image: ghcr.io/vveil/zahnarztweb.frontend:latest
     labels:
+      - "traefik.enable=true"
       - "traefik.http.routers.zahnarztweb.rule=Host(`dr-werner-zahnarzt.de`)"
-        #    networks:
-        #      - webnet
+      - "traefik.http.services.zahnarztweb.loadbalancer.server.port=3000"
+      - "traefik.http.routers.zahnarztweb.entrypoint=websecure"
+      - "traefik.http.routers.zahnarztweb.tls.certresolver=myresolver"
+    deploy:
+      mode: replicated
+      replicas: 3
+    networks:
+      - webnet
 
   # node-backend:
   #   image: ghcr.io/vveil/zahnarztweb.backend:latest
@@ -15,6 +22,6 @@ services:
   #   volumes:
   #     - ./backend/uploads:/usr/src/app/uploads
 
-        #networks:
-        #webnet:
-        #    external: true
+networks:
+  webnet:
+    external: true
