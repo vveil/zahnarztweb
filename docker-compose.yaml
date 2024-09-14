@@ -3,6 +3,8 @@ version: "3.8"
 services:
   solidjs-frontend:
     image: ghcr.io/vveil/zahnarztweb.frontend:latest
+    networks:
+      - webnet
 
   # node-backend:
   #   image: ghcr.io/vveil/zahnarztweb.backend:latest
@@ -12,6 +14,5 @@ services:
   #     - ./backend/uploads:/usr/src/app/uploads
 
 networks:
-  default:
-    external:
-      name: webnet
+  webnet:
+    external: true
