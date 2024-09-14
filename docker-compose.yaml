@@ -1,10 +1,12 @@
 version: "3.8"
 
 services:
-  solidjs-frontend:
+  zahnarztweb:
     image: ghcr.io/vveil/zahnarztweb.frontend:latest
-    networks:
-      - webnet
+    labels:
+      - "traefik.http.routers.zahnarztweb.rule=Host(`dr-werner-zahnarzt.de`)"
+        #    networks:
+        #      - webnet
 
   # node-backend:
   #   image: ghcr.io/vveil/zahnarztweb.backend:latest
@@ -13,6 +15,6 @@ services:
   #   volumes:
   #     - ./backend/uploads:/usr/src/app/uploads
 
-networks:
-  webnet:
-    external: true
+        #networks:
+        #webnet:
+        #    external: true
