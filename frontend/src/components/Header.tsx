@@ -27,9 +27,11 @@ export default function Header(props: any) {
         </h1>
       </A>
       <div class="hidden items-center gap-8 text-lg md:flex">
+        {/*
         <A class={`${active("/aktuelles")} `} href="/aktuelles">
           Aktuelles
         </A>
+        */}
         <A
           class={`${active("/services")}`}
           href="/services"
@@ -80,6 +82,7 @@ export default function Header(props: any) {
                 ></span>
               </div>
             </div>
+            {/*
             <A
               class={`${active("/aktuelles")} border-dark-teal-light w-full  border-y-2 py-5 text-center`}
               href="/aktuelles"
@@ -87,6 +90,7 @@ export default function Header(props: any) {
             >
               Aktuelles
             </A>
+            */}
             <A
               class={`${active("/services")} border-dark-teal-light border-b-2 w-full py-5 text-center`}
               href="/services"
