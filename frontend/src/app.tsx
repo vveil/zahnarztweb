@@ -11,6 +11,10 @@ export default function App() {
     <Router
       root={(props) => (
         <>
+          <script
+            src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
+            data-app-id="546EEE39-F763-4716-A0A4-6CF4C1B458E5"
+          ></script>
           <Suspense>
             {/* <Nav /> */}
             <div class="font-source-sans flex w-screen flex-1 justify-center">
