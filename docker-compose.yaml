@@ -5,10 +5,21 @@ services:
     image: ghcr.io/vveil/zahnarztweb.frontend:latest
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.zahnarztweb.rule=Host(`dr-werner-zahnarzt.de`) || Host(`www.dr-werner-zahnarzt.de`)"
-      - "traefik.http.services.zahnarztweb.loadbalancer.server.port=3000"
+      - "traefik.http.routers.zahnarztweb.rule=Host(`dr-werner-zahnarzt.de`)"
       - "traefik.http.routers.zahnarztweb.entrypoints=websecure"
       - "traefik.http.routers.zahnarztweb.tls.certresolver=myresolver"
+      - "traefik.http.services.zahnarztweb.loadbalancer.server.port=3000"
+
+      # redirect router (www -> non-www)
+      - "traefik.http.routers.zahnarztweb-www.rule=Host(`www.dr-werner-zahnarzt.de`)"
+      - "traefik.http.routers.zahnarztweb-www.entrypoints=websecure"
+      - "traefik.http.routers.zahnarztweb-www.tls.certresolver=myresolver"
+      - "traefik.http.routers.zahnarztweb-www.middlewares=zahnarztweb-redirect-www@docker"
+
+      # middleware: redirect to apex, keep path/query
+      - "traefik.http.middlewares.zahnarztweb-redirect-www.redirectregex.regex=^https?://www\\.dr-werner-zahnarzt\\.de/(.*)"
+      - "traefik.http.middlewares.zahnarztweb-redirect-www.redirectregex.replacement=https://dr-werner-zahnarzt.de/$$1"
+      - "traefik.http.middlewares.zahnarztweb-redirect-www.redirectregex.permanent=true"
     deploy:
       mode: replicated
       replicas: 3
