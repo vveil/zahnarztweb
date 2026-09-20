@@ -41,9 +41,9 @@ export default function Header(props: any) {
         <A class={`${active("/dokumente")} `} href="/dokumente">
           Dokumente
         </A>
-        <PrimaryButton url="/bewerben" className={`${active("/bewerben")}`}>
-          <span>Bewerben</span>
-        </PrimaryButton>
+        {/* <PrimaryButton url="/bewerben" className={`${active("/bewerben")}`}> */}
+        {/*   <span>Bewerben</span> */}
+        {/* </PrimaryButton> */}
       </div>
       <div class="md:hidden">
         <div class="space-y-[6px]" onClick={() => setIsOpen(true)}>

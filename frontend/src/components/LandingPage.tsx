@@ -3,6 +3,7 @@ import HeroText from "./HeroText";
 import DefaultButton from "./DefaultButton";
 import EmployeePreview from "./EmployeePreview";
 import PrimaryButton from "./PrimaryButton";
+import { A } from "@solidjs/router";
 
 export default function LandingPage(props: any) {
   const heroText = `Ihr Zahnarzt\nin\u00A0Braunschweig`;
@@ -103,14 +104,13 @@ export default function LandingPage(props: any) {
             job="AZUBI, Stuhlassistenz, Labor"
           />
           <BaseWidget
-            title="Wir suchen Zahnmedizinische Fachangestellte"
+            title="Wir freuen uns auf Ihren Besuch"
             className="order-first max-h-[18.75rem] md:order-1 md:h-[18.75rem] md:max-w-[18.75rem]"
             childrenDivClasses="flex w-full h-full justify-end items-end"
           >
-            <PrimaryButton url="/bewerben" className="mb-1">
-              Hier Bewerben
-              <span class="ml-2">→</span>
-            </PrimaryButton>
+            <a href="tel: 05316802929" class="primary-button mb-1">
+              <span class="ml-2">☎️ Termin vereinbaren</span>
+            </a>
           </BaseWidget>
         </div>
       </div>
