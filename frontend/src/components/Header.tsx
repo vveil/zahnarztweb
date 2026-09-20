@@ -105,13 +105,13 @@ export default function Header(props: any) {
             >
               Dokumente
             </A>
-            <A
-              href="/bewerben"
-              class={`${active("/bewerben")}  border-dark-teal-light w-full  border-y-2 py-5 text-center`}
-              onClick={() => setIsOpen(false)}
-            >
-              Bewerben
-            </A>
+            {/* <A */}
+            {/*   href="/bewerben" */}
+            {/*   class={`${active("/bewerben")}  border-dark-teal-light w-full  border-y-2 py-5 text-center`} */}
+            {/*   onClick={() => setIsOpen(false)} */}
+            {/* > */}
+            {/*   Bewerben */}
+            {/* </A> */}
           </div>
         </Show>
       </div>
